@@ -1,0 +1,5197 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Toán Lớp 2 • 10 Bộ Đề Giữa Học Kì I (2026 – 2027)</title>
+  <style>
+    :root {
+      --bg-paper: #fcf8ee;
+      --bg-card: #ffffff;
+      --bg-soft: #f6efe0;
+      --bg-grid: #f7f4eb;
+      --ink: #1e293b;
+      --ink-muted: #5b677a;
+      --ink-light: #8a95a5;
+      --border: #e5dac3;
+      --border-strong: #d3c2a3;
+      --primary: #0f766e;
+      --primary-hover: #0d625b;
+      --primary-soft: #e6f6f4;
+      --sky: #0284c7;
+      --sky-soft: #e0f2fe;
+      --amber: #d97706;
+      --amber-soft: #fef3c7;
+      --good: #15803d;
+      --good-bg: #dcfce7;
+      --good-border: #86efac;
+      --bad: #dc2626;
+      --bad-bg: #fee2e2;
+      --bad-border: #fca5a5;
+      --violet: #7c3aed;
+      --violet-soft: #ede9fe;
+      --orange: #ea580c;
+      --orange-soft: #ffedd5;
+      --shadow-sm: 0 2px 8px rgba(72, 54, 24, 0.06);
+      --shadow-md: 0 8px 24px rgba(72, 54, 24, 0.09);
+      --shadow-lg: 0 16px 40px rgba(72, 54, 24, 0.14);
+      --radius-lg: 20px;
+      --radius-md: 14px;
+      --radius-sm: 10px;
+      --font-sans: "Nunito", "Quicksand", "Segoe UI", -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+      --font-mono: "JetBrains Mono", "Consolas", "Courier New", monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      font-family: var(--font-sans);
+      color: var(--ink);
+      background-color: var(--bg-paper);
+      background-image:
+        radial-gradient(#e4d9c3 1px, transparent 1px),
+        linear-gradient(180deg, #fffdf7 0%, #f9f3e4 100%);
+      background-size: 22px 22px, 100% 100%;
+      min-height: 100vh;
+      line-height: 1.55;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    button, input, select, textarea {
+      font-family: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    /* Top Header */
+    .topbar {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background: rgba(255, 253, 247, 0.92);
+      backdrop-filter: blur(10px);
+      border-bottom: 2px solid var(--border);
+      box-shadow: 0 4px 14px rgba(72, 54, 24, 0.05);
+    }
+
+    .topbar-inner {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 10px 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      flex-shrink: 0;
+      background: linear-gradient(135deg, #fef3c7, #fde68a);
+      border: 2px solid #f59e0b;
+      border-radius: 14px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 3px 0 #d97706;
+    }
+
+    .brand-title {
+      font-size: 1.15rem;
+      font-weight: 800;
+      color: var(--primary);
+      line-height: 1.2;
+    }
+
+    .brand-sub {
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .pill-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 8px 13px;
+      border-radius: 999px;
+      border: 2px solid var(--border);
+      background: #fff;
+      color: var(--ink);
+      font-weight: 700;
+      font-size: 0.88rem;
+      transition: all 0.16s ease;
+      box-shadow: 0 2px 0 var(--border);
+    }
+
+    .pill-btn:hover {
+      transform: translateY(-1px);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    .pill-btn:active {
+      transform: translateY(1px);
+      box-shadow: none;
+    }
+
+    .pill-btn.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary-hover);
+      box-shadow: 0 2px 0 #094a44;
+    }
+
+    .stat-chip {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 12px;
+      background: var(--amber-soft);
+      border: 2px solid #fcd34d;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.86rem;
+      color: #92400e;
+    }
+
+    /* Main Container */
+    .container {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 18px 16px 70px;
+    }
+
+    /* Student Welcome & Exam Selector */
+    .selector-panel {
+      background: var(--bg-card);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 16px 18px;
+      box-shadow: var(--shadow-sm);
+      margin-bottom: 20px;
+    }
+
+    .selector-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+    }
+
+    .greeting {
+      font-size: 1.05rem;
+      font-weight: 800;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .greeting-badge {
+      background: var(--primary-soft);
+      color: var(--primary);
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-size: 0.8rem;
+      font-weight: 800;
+    }
+
+    .legend-row {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-size: 0.78rem;
+      font-weight: 700;
+    }
+
+    .legend-item {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 3px 9px;
+      border-radius: 999px;
+      background: #f8fafc;
+      border: 1px solid #e2e8f0;
+      color: var(--ink-muted);
+    }
+
+    .dot {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .exam-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    @media (max-width: 920px) {
+      .exam-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 480px) {
+      .exam-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    .exam-card-btn {
+      position: relative;
+      text-align: left;
+      padding: 11px 12px;
+      border-radius: var(--radius-md);
+      border: 2px solid var(--border);
+      background: #fffdf9;
+      transition: all 0.16s ease;
+      display: flex;
+      flex-direction: column;
+      gap: 5px;
+      box-shadow: 0 3px 0 #ebe1ce;
+    }
+
+    .exam-card-btn:hover {
+      transform: translateY(-2px);
+      border-color: var(--sky);
+      box-shadow: 0 5px 0 #bae6fd;
+    }
+
+    .exam-card-btn.active {
+      background: linear-gradient(180deg, #f0fdfa 0%, #ffffff 100%);
+      border-color: var(--primary);
+      box-shadow: 0 4px 0 #0f766e;
+    }
+
+    .exam-card-btn.done {
+      background: linear-gradient(180deg, #f0fdf4 0%, #ffffff 100%);
+    }
+
+    .exam-card-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 6px;
+    }
+
+    .exam-num {
+      font-weight: 900;
+      font-size: 0.98rem;
+      color: var(--ink);
+    }
+
+    .lvl-tag {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 2px 7px;
+      border-radius: 999px;
+      text-transform: uppercase;
+      letter-spacing: 0.02em;
+    }
+
+    .lvl-easy { background: #d1fae5; color: #065f46; }
+    .lvl-basic { background: #e0f2fe; color: #075985; }
+    .lvl-medium { background: #fef3c7; color: #92400e; }
+    .lvl-good { background: #ffedd5; color: #9a3412; }
+    .lvl-adv { background: #ede9fe; color: #5b21b6; }
+
+    .exam-card-status {
+      font-size: 0.78rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4px;
+    }
+
+    .score-pill {
+      background: var(--good-bg);
+      color: var(--good);
+      border: 1px solid var(--good-border);
+      padding: 1px 7px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 0.78rem;
+    }
+
+    /* Official School Paper Sheet */
+    .paper-sheet {
+      background: var(--bg-card);
+      border: 2px solid var(--border-strong);
+      border-radius: 24px;
+      box-shadow: var(--shadow-md);
+      overflow: hidden;
+    }
+
+    .paper-header {
+      background: linear-gradient(135deg, #fffaf0 0%, #f4f9f8 100%);
+      border-bottom: 2px dashed var(--border-strong);
+      padding: 20px 24px;
+    }
+
+    .paper-meta-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 16px;
+      align-items: stretch;
+    }
+
+    @media (max-width: 760px) {
+      .paper-meta-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    .student-box {
+      background: rgba(255, 255, 255, 0.85);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .inline-field {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-size: 0.92rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .inline-field input {
+      flex: 1;
+      border: none;
+      border-bottom: 2px dotted var(--border-strong);
+      background: transparent;
+      padding: 3px 6px;
+      font-size: 0.96rem;
+      font-weight: 700;
+      color: var(--primary);
+      outline: none;
+      min-width: 120px;
+    }
+
+    .inline-field input:focus {
+      border-bottom-color: var(--primary);
+      background: #f0fdfa;
+      border-radius: 6px 6px 0 0;
+    }
+
+    .exam-title-box {
+      background: rgba(255, 255, 255, 0.92);
+      border: 2px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 16px;
+      text-align: center;
+    }
+
+    .exam-title-box h1 {
+      margin: 0;
+      font-size: 1.08rem;
+      font-weight: 900;
+      color: var(--ink);
+      letter-spacing: 0.02em;
+    }
+
+    .exam-title-box .sub {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      margin-top: 2px;
+    }
+
+    .exam-ribbon {
+      margin-top: 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+
+    .exam-badge-big {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 16px;
+      border-radius: 999px;
+      font-weight: 900;
+      font-size: 1rem;
+      border: 2px solid currentColor;
+    }
+
+    .lock-banner {
+      display: inline-block;
+      padding: 7px 14px;
+      background: #fff7ed;
+      border: 1.5px solid #fdba74;
+      color: #9a3412;
+      border-radius: 18px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      line-height: 1.45;
+    }
+
+    .timer-box {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      background: #ffffff;
+      border: 2px solid var(--border);
+      padding: 6px 12px;
+      border-radius: 999px;
+      font-weight: 800;
+      font-size: 0.92rem;
+    }
+
+    .timer-display {
+      font-family: var(--font-mono);
+      font-size: 1rem;
+      color: var(--primary);
+      min-width: 54px;
+      text-align: center;
+    }
+
+    .timer-display.warning {
+      color: var(--bad);
+      animation: pulse 1s infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.55; }
+    }
+
+    .mini-btn {
+      border: 1.5px solid var(--border);
+      background: #f8fafc;
+      color: var(--ink);
+      font-size: 0.78rem;
+      font-weight: 800;
+      padding: 4px 9px;
+      border-radius: 999px;
+      transition: all 0.14s ease;
+    }
+
+    .mini-btn:hover {
+      background: var(--primary-soft);
+      border-color: var(--primary);
+      color: var(--primary);
+    }
+
+    /* Quick Jump Bar */
+    .jump-bar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 12px 24px;
+      background: #faf6eb;
+      border-bottom: 1.5px solid var(--border);
+      flex-wrap: wrap;
+    }
+
+    .jump-pills {
+      display: flex;
+      gap: 7px;
+      flex-wrap: wrap;
+    }
+
+    .jump-pill {
+      padding: 5px 12px;
+      border-radius: 999px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      font-size: 0.83rem;
+      font-weight: 800;
+      color: var(--ink-muted);
+      transition: all 0.15s;
+    }
+
+    .jump-pill.filled {
+      border-color: var(--sky);
+      background: var(--sky-soft);
+      color: #0369a1;
+    }
+
+    .jump-pill.graded-good {
+      border-color: var(--good);
+      background: var(--good-bg);
+      color: var(--good);
+    }
+
+    .jump-pill.graded-warn {
+      border-color: var(--amber);
+      background: var(--amber-soft);
+      color: #92400e;
+    }
+
+    .jump-pill.graded-bad {
+      border-color: var(--bad);
+      background: var(--bad-bg);
+      color: var(--bad);
+    }
+
+    /* Score Report Card (Shown ONLY after submitting!) */
+    .report-card {
+      margin: 20px 24px 0;
+      padding: 20px 22px;
+      border-radius: var(--radius-lg);
+      background: linear-gradient(135deg, #f0fdf4 0%, #fffbeb 100%);
+      border: 2.5px solid #86efac;
+      box-shadow: var(--shadow-sm);
+      display: none;
+    }
+
+    .report-card.show {
+      display: block;
+      animation: slideDown 0.35s ease;
+    }
+
+    .report-card.needs-practice {
+      background: linear-gradient(135deg, #fff7ed 0%, #fefce8 100%);
+      border-color: #fdba74;
+    }
+
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-10px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    .report-top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .report-score-circle {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+    }
+
+    .score-big {
+      min-width: 96px;
+      height: 96px;
+      padding: 0 14px;
+      border-radius: 24px;
+      background: #fff;
+      border: 3px solid var(--good);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 4px 0 #86efac;
+    }
+
+    .report-card.needs-practice .score-big {
+      border-color: var(--orange);
+      box-shadow: 0 4px 0 #fdba74;
+    }
+
+    .score-big .num {
+      font-size: 1.95rem;
+      font-weight: 900;
+      color: var(--good);
+      line-height: 1;
+    }
+
+    .report-card.needs-practice .score-big .num {
+      color: var(--orange);
+    }
+
+    .score-big .denom {
+      font-size: 0.78rem;
+      font-weight: 800;
+      color: var(--ink-muted);
+      margin-top: 3px;
+    }
+
+    .teacher-note {
+      flex: 1;
+      min-width: 240px;
+    }
+
+    .teacher-note .stars {
+      font-size: 1.35rem;
+      letter-spacing: 3px;
+      margin-bottom: 4px;
+    }
+
+    .teacher-note h2 {
+      margin: 0 0 4px;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--ink);
+    }
+
+    .teacher-note p {
+      margin: 0;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--ink-muted);
+    }
+
+    .part-scores {
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1.5px dashed rgba(0, 0, 0, 0.12);
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .part-score-badge {
+      background: #fff;
+      border: 1.5px solid var(--border);
+      border-radius: 10px;
+      padding: 5px 11px;
+      font-size: 0.84rem;
+      font-weight: 800;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    /* Exercises Body */
+    .paper-body {
+      padding: 22px 24px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 22px;
+    }
+
+    @media (max-width: 600px) {
+      .paper-header, .paper-body, .jump-bar {
+        padding-left: 14px;
+        padding-right: 14px;
+      }
+      .report-card {
+        margin-left: 14px;
+        margin-right: 14px;
+      }
+    }
+
+    .ex-card {
+      background: #ffffff;
+      border: 2px solid var(--border);
+      border-radius: var(--radius-lg);
+      padding: 18px 20px;
+      box-shadow: 0 3px 0 #efe6d5;
+      transition: border-color 0.2s ease;
+    }
+
+    .ex-card.is-correct {
+      border-color: var(--good-border);
+      box-shadow: 0 3px 0 #bbf7d0;
+    }
+
+    .ex-card.is-partial {
+      border-color: #fcd34d;
+      box-shadow: 0 3px 0 #fde68a;
+    }
+
+    .ex-card.is-wrong {
+      border-color: var(--bad-border);
+      box-shadow: 0 3px 0 #fecaca;
+    }
+
+    .ex-header {
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      flex-wrap: wrap;
+    }
+
+    .ex-title-wrap {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      flex-wrap: wrap;
+    }
+
+    .ex-badge {
+      background: var(--primary);
+      color: #fff;
+      font-weight: 900;
+      font-size: 0.9rem;
+      padding: 3px 11px;
+      border-radius: 999px;
+    }
+
+    .ex-pts {
+      font-size: 0.85rem;
+      font-weight: 800;
+      color: var(--amber);
+      background: var(--amber-soft);
+      padding: 2px 9px;
+      border-radius: 999px;
+    }
+
+    .ex-prompt {
+      font-size: 1.08rem;
+      font-weight: 800;
+      color: var(--ink);
+    }
+
+    .ex-result-tag {
+      font-size: 0.86rem;
+      font-weight: 900;
+      padding: 4px 12px;
+      border-radius: 999px;
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+    }
+
+    .ex-result-tag.good { background: var(--good-bg); color: var(--good); border: 1.5px solid var(--good-border); }
+    .ex-result-tag.warn { background: var(--amber-soft); color: #92400e; border: 1.5px solid #fcd34d; }
+    .ex-result-tag.bad { background: var(--bad-bg); color: var(--bad); border: 1.5px solid var(--bad-border); }
+
+    /* Sub-question Grid & Inputs */
+    .sub-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+      gap: 12px;
+    }
+
+    .sub-grid.cols-2 {
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    }
+
+    .sub-item {
+      background: #fcfaf4;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+
+    .sub-item:focus-within {
+      border-color: var(--sky);
+      background: #f8fcff;
+    }
+
+    .sub-item.item-good {
+      background: #f2fdf5;
+      border-color: var(--good-border);
+    }
+
+    .sub-item.item-bad {
+      background: #fef4f4;
+      border-color: var(--bad-border);
+    }
+
+    .sub-item.item-partial {
+      background: #fffbeb;
+      border-color: #fcd34d;
+    }
+
+    .sub-line {
+      font-size: 1.06rem;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 6px;
+      line-height: 1.7;
+    }
+
+    .math-input {
+      width: 68px;
+      height: 40px;
+      border: 2px solid var(--border-strong);
+      border-radius: 10px;
+      background: #ffffff;
+      text-align: center;
+      font-size: 1.12rem;
+      font-weight: 900;
+      color: var(--sky);
+      outline: none;
+      transition: all 0.15s ease;
+      padding: 0 6px;
+      appearance: textfield;
+      -moz-appearance: textfield;
+    }
+
+    .math-input::-webkit-outer-spin-button,
+    .math-input::-webkit-inner-spin-button {
+      -webkit-appearance: none;
+      margin: 0;
+    }
+
+    .math-input::placeholder {
+      font-size: 0.86rem;
+      font-weight: 700;
+      color: #94a3b8;
+    }
+
+    .math-input.narrow {
+      width: 54px;
+    }
+
+    .math-input.wide {
+      width: 104px;
+    }
+
+    .math-input:focus {
+      border-color: var(--sky);
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.16);
+    }
+
+    .math-input:disabled {
+      opacity: 0.95;
+      cursor: default;
+    }
+
+    /* Comparison Chips (>, <, =) */
+    .compare-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .compare-expr {
+      font-size: 1.12rem;
+      font-weight: 800;
+      color: var(--ink);
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .compare-slot {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      width: 40px;
+      height: 38px;
+      border: 2px dashed var(--border-strong);
+      border-radius: 10px;
+      background: #fff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--sky);
+    }
+
+    .compare-slot.chosen {
+      border-style: solid;
+      border-color: var(--sky);
+      background: var(--sky-soft);
+    }
+
+    .sign-picker {
+      display: inline-flex;
+      gap: 6px;
+    }
+
+    .sign-btn {
+      width: 42px;
+      height: 40px;
+      border-radius: 10px;
+      border: 2px solid var(--border);
+      background: #fff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      color: var(--ink);
+      box-shadow: 0 2px 0 var(--border);
+      transition: all 0.12s ease;
+    }
+
+    .sign-btn:hover:not(:disabled) {
+      border-color: var(--sky);
+      color: var(--sky);
+      transform: translateY(-1px);
+    }
+
+    .sign-btn.selected {
+      background: var(--sky);
+      color: #fff;
+      border-color: #0369a1;
+      box-shadow: 0 2px 0 #075985;
+    }
+
+    /* Ordering Numbers Widget */
+    .order-workspace {
+      background: #fcfaf4;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px;
+    }
+
+    .order-hint {
+      font-size: 0.9rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      margin-bottom: 12px;
+    }
+
+    .order-slots {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 14px;
+      padding: 12px;
+      background: #fff;
+      border: 2px dashed var(--border-strong);
+      border-radius: var(--radius-md);
+      min-height: 68px;
+    }
+
+    .order-slot {
+      min-width: 62px;
+      height: 46px;
+      padding: 0 12px;
+      border-radius: 12px;
+      border: 2px dashed #cbd5e1;
+      background: #f8fafc;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 1.18rem;
+      font-weight: 900;
+      color: var(--ink-light);
+    }
+
+    .order-slot.filled {
+      border-style: solid;
+      border-color: var(--sky);
+      background: var(--sky-soft);
+      color: #0369a1;
+      cursor: pointer;
+      box-shadow: 0 2px 0 #bae6fd;
+    }
+
+    .order-slot.filled:hover:not(:disabled) {
+      background: #bae6fd;
+    }
+
+    .order-arrow {
+      font-weight: 900;
+      color: var(--ink-light);
+      font-size: 1rem;
+    }
+
+    .order-pool {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pool-tile {
+      min-width: 62px;
+      height: 46px;
+      padding: 0 14px;
+      border-radius: 12px;
+      border: 2px solid #f59e0b;
+      background: linear-gradient(180deg, #fffbeb 0%, #fef3c7 100%);
+      color: #92400e;
+      font-size: 1.18rem;
+      font-weight: 900;
+      box-shadow: 0 3px 0 #d97706;
+      transition: all 0.14s ease;
+    }
+
+    .pool-tile:hover:not(:disabled) {
+      transform: translateY(-2px);
+    }
+
+    .pool-tile.used {
+      opacity: 0.28;
+      pointer-events: none;
+      box-shadow: none;
+      transform: translateY(2px);
+    }
+
+    /* Vertical Column Math (Đặt tính rồi tính - Ô ly vở học sinh) */
+    .vertical-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+      gap: 14px;
+    }
+
+    .oly-card {
+      background-color: #ffffff;
+      background-image:
+        linear-gradient(to right, #e2eff8 1px, transparent 1px),
+        linear-gradient(to bottom, #e2eff8 1px, transparent 1px);
+      background-size: 22px 22px;
+      border: 2px solid #cbd5e1;
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .oly-card.item-good {
+      border-color: var(--good-border);
+      background-color: #f4fdf6;
+    }
+
+    .oly-card.item-bad {
+      border-color: var(--bad-border);
+      background-color: #fef6f6;
+    }
+
+    .oly-label {
+      align-self: flex-start;
+      font-weight: 900;
+      font-size: 0.96rem;
+      color: var(--ink);
+      background: rgba(255,255,255,0.92);
+      padding: 2px 9px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+    }
+
+    .calc-columns {
+      display: inline-grid;
+      grid-template-columns: 28px 42px 42px;
+      grid-template-rows: auto auto auto 4px auto;
+      align-items: center;
+      justify-items: center;
+      row-gap: 4px;
+      column-gap: 4px;
+      background: rgba(255,255,255,0.88);
+      padding: 10px 14px;
+      border-radius: 12px;
+      border: 1.5px solid #e2e8f0;
+    }
+
+    .col-hdr {
+      font-size: 0.68rem;
+      font-weight: 800;
+      color: var(--ink-light);
+      text-transform: uppercase;
+    }
+
+    .carry-btn {
+      font-size: 0.7rem;
+      font-weight: 800;
+      padding: 1px 6px;
+      border-radius: 999px;
+      border: 1px dashed #cbd5e1;
+      background: #fff;
+      color: #94a3b8;
+    }
+
+    .carry-btn.on {
+      background: #fee2e2;
+      border-style: solid;
+      border-color: #f87171;
+      color: #b91c1c;
+    }
+
+    .calc-digit {
+      font-family: var(--font-mono);
+      font-size: 1.65rem;
+      font-weight: 800;
+      color: var(--ink);
+      line-height: 1.2;
+    }
+
+    .calc-op {
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--primary);
+      grid-column: 1;
+      grid-row: 3;
+    }
+
+    .calc-bar {
+      grid-column: 1 / 4;
+      width: 100%;
+      height: 3px;
+      background: var(--ink);
+      border-radius: 2px;
+      margin: 2px 0;
+    }
+
+    .digit-box {
+      width: 40px;
+      height: 44px;
+      border: 2px solid var(--sky);
+      border-radius: 10px;
+      text-align: center;
+      font-family: var(--font-mono);
+      font-size: 1.5rem;
+      font-weight: 900;
+      color: var(--sky);
+      background: #fff;
+      outline: none;
+    }
+
+    .digit-box:focus {
+      box-shadow: 0 0 0 3px rgba(2, 132, 199, 0.2);
+      background: #f0f9ff;
+    }
+
+    .oly-tip {
+      font-size: 0.76rem;
+      font-weight: 700;
+      color: var(--ink-muted);
+      text-align: center;
+    }
+
+    /* Find X Workspace */
+    .findx-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(265px, 1fr));
+      gap: 14px;
+    }
+
+    .findx-card {
+      background: #fcfaf4;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 14px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .findx-card.item-good { background: #f2fdf5; border-color: var(--good-border); }
+    .findx-card.item-partial { background: #fffbeb; border-color: #fcd34d; }
+    .findx-card.item-bad { background: #fef4f4; border-color: var(--bad-border); }
+
+    .findx-eq {
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--ink);
+      padding-bottom: 6px;
+      border-bottom: 1.5px dashed var(--border);
+    }
+
+    .findx-step {
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+      font-weight: 800;
+      font-size: 1.02rem;
+    }
+
+    .op-toggle {
+      display: inline-flex;
+      border: 2px solid var(--border-strong);
+      border-radius: 10px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .op-toggle button {
+      width: 34px;
+      height: 36px;
+      border: none;
+      background: transparent;
+      font-size: 1.15rem;
+      font-weight: 900;
+      color: var(--ink-muted);
+    }
+
+    .op-toggle button.selected {
+      background: var(--primary);
+      color: #fff;
+    }
+
+    /* Word Problem Workspace */
+    .word-box {
+      background: #fcfaf4;
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-md);
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .word-story {
+      font-size: 1.06rem;
+      font-weight: 700;
+      color: var(--ink);
+      background: #fff;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border-left: 5px solid var(--primary);
+      box-shadow: 0 2px 6px rgba(0,0,0,0.03);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      flex-wrap: wrap;
+    }
+
+    .word-illustration {
+      flex-shrink: 0;
+      background: #f8fafc;
+      border: 1.5px solid #e2e8f0;
+      border-radius: 12px;
+      padding: 8px 12px;
+    }
+
+    .baigiai-sheet {
+      background: #ffffff;
+      border: 2px solid #d5e3ec;
+      border-radius: 14px;
+      padding: 16px 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .baigiai-title {
+      text-align: center;
+      font-weight: 900;
+      font-size: 1rem;
+      color: var(--primary);
+      text-decoration: underline;
+      text-underline-offset: 4px;
+      letter-spacing: 0.03em;
+    }
+
+    .step-block {
+      background: #f9fcff;
+      border: 1.5px solid #dbeafe;
+      border-radius: 12px;
+      padding: 12px 14px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+
+    .step-label {
+      font-size: 0.84rem;
+      font-weight: 900;
+      color: var(--sky);
+      text-transform: uppercase;
+    }
+
+    .sentence-chips {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+    }
+
+    .sentence-chip {
+      text-align: left;
+      padding: 8px 12px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: #fff;
+      font-size: 0.94rem;
+      font-weight: 700;
+      color: var(--ink);
+      transition: all 0.14s ease;
+    }
+
+    .sentence-chip:hover:not(:disabled) {
+      border-color: var(--sky);
+      background: #f0f9ff;
+    }
+
+    .sentence-chip.selected {
+      border-color: var(--primary);
+      background: var(--primary-soft);
+      color: var(--primary);
+      box-shadow: inset 0 0 0 1px var(--primary);
+    }
+
+    .custom-sentence-input {
+      width: 100%;
+      padding: 9px 12px;
+      border: 2px solid var(--sky);
+      border-radius: 10px;
+      font-size: 0.95rem;
+      font-weight: 700;
+      outline: none;
+    }
+
+    .equation-builder {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      flex-wrap: wrap;
+      font-weight: 800;
+      font-size: 1.02rem;
+    }
+
+    .dapso-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      padding-top: 8px;
+      border-top: 1.5px dashed #cbd5e1;
+      font-weight: 900;
+      font-size: 1.02rem;
+      color: var(--ink);
+    }
+
+    /* Post-Submission Feedback & Step-by-Step Solution Box */
+    .item-feedback {
+      font-size: 0.85rem;
+      font-weight: 800;
+      padding: 5px 10px;
+      border-radius: 8px;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      flex-wrap: wrap;
+    }
+
+    .item-feedback.good {
+      background: var(--good-bg);
+      color: var(--good);
+    }
+
+    .item-feedback.bad {
+      background: var(--bad-bg);
+      color: var(--bad);
+    }
+
+    .item-feedback.partial {
+      background: var(--amber-soft);
+      color: #92400e;
+    }
+
+    .solution-box {
+      margin-top: 14px;
+      border-radius: var(--radius-md);
+      background: #f0f9ff;
+      border: 2px solid #bae6fd;
+      padding: 14px 16px;
+      display: none;
+    }
+
+    .solution-box.show {
+      display: block;
+      animation: slideDown 0.25s ease;
+    }
+
+    .solution-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-weight: 900;
+      font-size: 0.95rem;
+      color: #0369a1;
+      margin-bottom: 10px;
+    }
+
+    .solution-list {
+      margin: 0;
+      padding-left: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 7px;
+      font-size: 0.94rem;
+      font-weight: 600;
+      color: var(--ink);
+    }
+
+    .sol-answer {
+      color: var(--good);
+      font-weight: 900;
+    }
+
+    .sol-vertical-wrap {
+      display: flex;
+      gap: 16px;
+      flex-wrap: wrap;
+      margin-top: 6px;
+    }
+
+    .sol-vertical-item {
+      background: #fff;
+      border: 1.5px solid #bae6fd;
+      border-radius: 12px;
+      padding: 10px 14px;
+      min-width: 210px;
+      flex: 1;
+    }
+
+    /* Bottom Action Bar */
+    .submit-dock {
+      padding: 18px 24px 24px;
+      background: #faf6eb;
+      border-top: 2px dashed var(--border-strong);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .progress-summary {
+      font-size: 0.95rem;
+      font-weight: 800;
+      color: var(--ink-muted);
+    }
+
+    .action-group {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .primary-cta {
+      padding: 13px 26px;
+      border-radius: 16px;
+      border: none;
+      background: linear-gradient(180deg, #10b981 0%, #059669 100%);
+      color: #fff;
+      font-size: 1.05rem;
+      font-weight: 900;
+      box-shadow: 0 4px 0 #047857;
+      transition: all 0.15s ease;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .primary-cta:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 0 #047857;
+    }
+
+    .primary-cta:active {
+      transform: translateY(2px);
+      box-shadow: 0 2px 0 #047857;
+    }
+
+    .secondary-cta {
+      padding: 11px 18px;
+      border-radius: 14px;
+      border: 2px solid var(--border-strong);
+      background: #fff;
+      color: var(--ink);
+      font-size: 0.95rem;
+      font-weight: 800;
+      box-shadow: 0 3px 0 var(--border);
+      transition: all 0.14s ease;
+    }
+
+    .secondary-cta:hover {
+      border-color: var(--sky);
+      color: var(--sky);
+    }
+
+    /* Scratchpad & Manipulative Drawer */
+    .drawer-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.35);
+      z-index: 60;
+      display: none;
+    }
+
+    .drawer-backdrop.open {
+      display: block;
+    }
+
+    .drawer {
+      position: fixed;
+      top: 0;
+      right: 0;
+      width: min(440px, 96vw);
+      height: 100vh;
+      background: #fffdf8;
+      border-left: 3px solid var(--border-strong);
+      box-shadow: var(--shadow-lg);
+      z-index: 70;
+      transform: translateX(100%);
+      transition: transform 0.25s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .drawer.open {
+      transform: translateX(0);
+    }
+
+    .drawer-header {
+      padding: 14px 18px;
+      border-bottom: 2px solid var(--border);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #faf4e6;
+    }
+
+    .drawer-tabs {
+      display: flex;
+      gap: 6px;
+      padding: 10px 16px;
+      border-bottom: 1.5px solid var(--border);
+      background: #fff;
+    }
+
+    .drawer-tab {
+      flex: 1;
+      padding: 8px;
+      border-radius: 10px;
+      border: 1.5px solid var(--border);
+      background: #f8fafc;
+      font-weight: 800;
+      font-size: 0.84rem;
+      color: var(--ink-muted);
+    }
+
+    .drawer-tab.active {
+      background: var(--primary);
+      color: #fff;
+      border-color: var(--primary);
+    }
+
+    .drawer-body {
+      flex: 1;
+      overflow-y: auto;
+      padding: 16px;
+    }
+
+    .canvas-wrap {
+      border: 2px solid var(--border-strong);
+      border-radius: 14px;
+      overflow: hidden;
+      background: #ffffff;
+      background-image:
+        linear-gradient(to right, #eef6fb 1px, transparent 1px),
+        linear-gradient(to bottom, #eef6fb 1px, transparent 1px);
+      background-size: 24px 24px;
+      touch-action: none;
+    }
+
+    #scratchCanvas {
+      display: block;
+      width: 100%;
+      height: 370px;
+      cursor: crosshair;
+    }
+
+    .pen-bar {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 10px;
+      flex-wrap: wrap;
+    }
+
+    .pen-swatch {
+      width: 30px;
+      height: 30px;
+      border-radius: 50%;
+      border: 2px solid #fff;
+      box-shadow: 0 0 0 2px var(--border-strong);
+    }
+
+    .pen-swatch.active {
+      box-shadow: 0 0 0 3px var(--primary);
+      transform: scale(1.08);
+    }
+
+    /* Base-10 Visual Blocks */
+    .blocks-stage {
+      background: #fff;
+      border: 2px solid var(--border);
+      border-radius: 14px;
+      padding: 14px;
+      min-height: 160px;
+      margin-top: 10px;
+    }
+
+    .ten-rod {
+      display: inline-flex;
+      flex-direction: column;
+      gap: 2px;
+      padding: 3px;
+      background: #fef3c7;
+      border: 1.5px solid #f59e0b;
+      border-radius: 6px;
+      margin: 4px;
+    }
+
+    .ten-rod span {
+      width: 12px;
+      height: 8px;
+      background: #f59e0b;
+      border-radius: 2px;
+      display: block;
+    }
+
+    .one-cube {
+      display: inline-block;
+      width: 18px;
+      height: 18px;
+      background: #38bdf8;
+      border: 1.5px solid #0284c7;
+      border-radius: 4px;
+      margin: 3px;
+    }
+
+    /* Modals */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background: rgba(15, 23, 42, 0.45);
+      z-index: 80;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 16px;
+    }
+
+    .modal-overlay.open {
+      display: flex;
+    }
+
+    .modal-card {
+      background: #fffdf8;
+      border: 2px solid var(--border-strong);
+      border-radius: 22px;
+      max-width: 580px;
+      width: 100%;
+      max-height: 88vh;
+      overflow-y: auto;
+      padding: 22px 24px;
+      box-shadow: var(--shadow-lg);
+      animation: slideDown 0.2s ease;
+    }
+
+    .modal-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      margin-bottom: 14px;
+    }
+
+    .modal-head h3 {
+      margin: 0;
+      font-size: 1.15rem;
+      font-weight: 900;
+    }
+
+    .score-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.92rem;
+    }
+
+    .score-table th, .score-table td {
+      padding: 9px 10px;
+      border-bottom: 1px solid var(--border);
+      text-align: left;
+    }
+
+    .score-table th {
+      background: #faf4e6;
+      font-weight: 900;
+      color: var(--ink-muted);
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 1120px;
+      margin: 10px auto 30px;
+      padding: 0 18px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      flex-wrap: wrap;
+      font-size: 0.82rem;
+      color: var(--ink-muted);
+      font-weight: 600;
+    }
+
+    .parent-link {
+      background: none;
+      border: none;
+      color: var(--ink-light);
+      text-decoration: underline;
+      font-size: 0.8rem;
+      font-weight: 700;
+      padding: 4px;
+    }
+
+    .parent-link:hover {
+      color: var(--primary);
+    }
+
+    /* Confetti Canvas */
+    #confettiCanvas {
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      z-index: 100;
+    }
+
+    /* Print Styles */
+    @media print {
+      body {
+        background: #fff !important;
+      }
+      .topbar, .selector-panel, .jump-bar, .submit-dock, .footer, .drawer, .drawer-backdrop, .modal-overlay, .timer-box, .lock-banner, #confettiCanvas {
+        display: none !important;
+      }
+      .paper-sheet {
+        border: none;
+        box-shadow: none;
+      }
+      .ex-card {
+        break-inside: avoid;
+        box-shadow: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <canvas id="confettiCanvas"></canvas>
+
+  <!-- TOP NAVIGATION -->
+  <header class="topbar">
+    <div class="topbar-inner">
+      <div class="brand">
+        <div class="brand-icon" aria-hidden="true">
+          <svg width="28" height="28" viewBox="0 0 32 32" fill="none">
+            <circle cx="16" cy="17" r="11" fill="#F59E0B"/>
+            <circle cx="12" cy="14" r="4" fill="#FFF"/>
+            <circle cx="20" cy="14" r="4" fill="#FFF"/>
+            <circle cx="12.5" cy="14" r="1.8" fill="#1E293B"/>
+            <circle cx="19.5" cy="14" r="1.8" fill="#1E293B"/>
+            <polygon points="16,17 13.5,20.5 18.5,20.5" fill="#EA580C"/>
+            <path d="M8 9L12 12M24 9L20 12" stroke="#B45309" stroke-width="2.5" stroke-linecap="round"/>
+          </svg>
+        </div>
+        <div>
+          <div class="brand-title">Góc Học Toán Lớp 2</div>
+          <div class="brand-sub">10 Bộ Đề Giữa Học Kì I • Năm học 2026 – 2027</div>
+        </div>
+      </div>
+
+      <div class="topbar-actions">
+        <div class="stat-chip" id="overallProgressChip" title="Tiến độ các đề đã hoàn thành">
+          ⭐ <span id="overallSummaryText">0/10 đề</span>
+        </div>
+        <button class="pill-btn" id="openScoreboardBtn" type="button">📊 Bảng điểm</button>
+        <button class="pill-btn" id="openScratchBtn" type="button">📝 Bảng nháp</button>
+        <button class="pill-btn" id="soundToggleBtn" type="button" title="Bật/Tắt âm thanh">🔊 Âm thanh</button>
+        <button class="pill-btn" id="printExamBtn" type="button" title="In đề hiện tại">🖨️ In đề</button>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <!-- EXAM SELECTOR -->
+    <section class="selector-panel" aria-label="Chọn bộ đề">
+      <div class="selector-top">
+        <div class="greeting">
+          <span id="greetingText">Chào bé! Chọn một đề để bắt đầu luyện tập nhé 🌟</span>
+          <span class="greeting-badge" id="lockStatusBadge">🔒 Đáp án cất kỹ đến khi nộp bài</span>
+        </div>
+        <div class="legend-row">
+          <span class="legend-item"><span class="dot" style="background:#10b981"></span>Dễ</span>
+          <span class="legend-item"><span class="dot" style="background:#0ea5e9"></span>Cơ bản</span>
+          <span class="legend-item"><span class="dot" style="background:#f59e0b"></span>Trung bình</span>
+          <span class="legend-item"><span class="dot" style="background:#f97316"></span>Khá</span>
+          <span class="legend-item"><span class="dot" style="background:#8b5cf6"></span>Nâng cao</span>
+        </div>
+      </div>
+      <div class="exam-grid" id="examGrid"></div>
+    </section>
+
+    <!-- EXAM SHEET -->
+    <article class="paper-sheet" id="paperSheet">
+      <div class="paper-header">
+        <div class="paper-meta-grid">
+          <div class="student-box">
+            <label class="inline-field">
+              <span>TRƯỜNG TIỂU HỌC:</span>
+              <input type="text" id="schoolInput" placeholder="Nhập tên trường..." />
+            </label>
+            <label class="inline-field">
+              <span>Họ và tên bé:</span>
+              <input type="text" id="studentNameInput" placeholder="Nhập họ tên của bé..." />
+            </label>
+          </div>
+          <div class="exam-title-box">
+            <h1>BÀI KIỂM TRA GIỮA HỌC KÌ I</h1>
+            <div class="sub">Năm học 2026 – 2027 • Môn: TOÁN – Lớp 2</div>
+            <div class="sub">Thời gian: 40 phút (không kể phát đề)</div>
+          </div>
+        </div>
+
+        <div class="exam-ribbon">
+          <div id="examLevelBadge" class="exam-badge-big">ĐỀ SỐ 01 • MỨC ĐỘ: DỄ</div>
+          <div class="lock-banner" id="examLockNotice">
+            🔒 Làm xong bấm <strong>"Nộp bài"</strong> để mở đáp án &amp; chấm điểm đề này
+          </div>
+          <div class="timer-box">
+            <span>⏱️</span>
+            <span class="timer-display" id="timerDisplay">40:00</span>
+            <button type="button" class="mini-btn" id="timerToggleBtn">Bắt đầu</button>
+            <button type="button" class="mini-btn" id="timerResetBtn">Đặt lại</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="jump-bar">
+        <div class="jump-pills" id="jumpPills"></div>
+        <div style="font-size:0.84rem; font-weight:800; color:var(--ink-muted);" id="completionLabel">
+          Đã làm: 0/5 bài
+        </div>
+      </div>
+
+      <!-- SCORE REPORT (HIDDEN UNTIL SUBMITTED) -->
+      <section class="report-card" id="reportCard" aria-live="polite"></section>
+
+      <!-- 5 EXERCISES -->
+      <div class="paper-body" id="paperBody"></div>
+
+      <!-- BOTTOM ACTION DOCK -->
+      <div class="submit-dock" id="submitDock">
+        <div class="progress-summary" id="bottomProgressText">
+          Bé nhớ kiểm tra lại các bài trước khi nộp nhé!
+        </div>
+        <div class="action-group" id="bottomActions"></div>
+      </div>
+    </article>
+  </main>
+
+  <footer class="footer">
+    <div>💡 Tiến độ làm bài của bé tự động lưu trên máy. Đáp án chỉ hiện sau khi nộp từng đề.</div>
+    <div>
+      <button type="button" class="parent-link" id="parentCornerBtn">👨‍👩‍👧 Góc Phụ Huynh (Xem đáp án / Đặt lại)</button>
+    </div>
+  </footer>
+
+  <!-- SCRATCHPAD & HELPERS DRAWER -->
+  <div class="drawer-backdrop" id="drawerBackdrop"></div>
+  <aside class="drawer" id="scratchDrawer" aria-label="Bảng nháp và công cụ hỗ trợ">
+    <div class="drawer-header">
+      <div style="font-weight:900; font-size:1.05rem;">📝 Bảng Nháp &amp; Que Tính</div>
+      <button type="button" class="mini-btn" id="closeDrawerBtn">✕ Đóng</button>
+    </div>
+    <div class="drawer-tabs">
+      <button type="button" class="drawer-tab active" data-tab="draw">✏️ Viết nháp</button>
+      <button type="button" class="drawer-tab" data-tab="blocks">🧱 Que tính</button>
+      <button type="button" class="drawer-tab" data-tab="tips">📖 Ghi nhớ</button>
+    </div>
+    <div class="drawer-body">
+      <div id="tab-draw">
+        <div class="pen-bar">
+          <button type="button" class="pen-swatch active" data-color="#1e293b" style="background:#1e293b" title="Bút đen"></button>
+          <button type="button" class="pen-swatch" data-color="#0284c7" style="background:#0284c7" title="Bút xanh"></button>
+          <button type="button" class="pen-swatch" data-color="#dc2626" style="background:#dc2626" title="Bút đỏ"></button>
+          <button type="button" class="mini-btn" id="eraserBtn">🧽 Tẩy</button>
+          <button type="button" class="mini-btn" id="clearCanvasBtn">🗑️ Xóa hết</button>
+        </div>
+        <div class="canvas-wrap">
+          <canvas id="scratchCanvas" width="390" height="370"></canvas>
+        </div>
+        <p style="font-size:0.82rem; color:var(--ink-muted); font-weight:600; margin-top:8px;">
+          Bé dùng chuột hoặc ngón tay viết phép tính đặt dọc lên ô ly này nhé!
+        </p>
+      </div>
+
+      <div id="tab-blocks" style="display:none;">
+        <div style="font-weight:800; font-size:0.95rem; margin-bottom:8px;">
+          Biểu diễn số bằng Bó 1 chục và Que đơn vị:
+        </div>
+        <div style="display:flex; gap:8px; align-items:center; flex-wrap:wrap;">
+          <input type="number" id="blockNumberInput" class="math-input wide" min="0" max="99" value="35" />
+          <button type="button" class="mini-btn" id="addTenBtn">+1 chục</button>
+          <button type="button" class="mini-btn" id="addOneBtn">+1 đơn vị</button>
+          <button type="button" class="mini-btn" id="resetBlockBtn">Đặt lại</button>
+        </div>
+        <div class="blocks-stage" id="blocksStage"></div>
+      </div>
+
+      <div id="tab-tips" style="display:none;">
+        <div style="display:flex; flex-direction:column; gap:12px; font-size:0.9rem;">
+          <div style="background:#f0fdfa; border:1.5px solid #99f6e4; border-radius:12px; padding:12px;">
+            <strong>1. Số liền trước, số liền sau:</strong><br/>
+            • Số liền trước = Số đó <strong>− 1</strong><br/>
+            • Số liền sau = Số đó <strong>+ 1</strong>
+          </div>
+          <div style="background:#f0f9ff; border:1.5px solid #bae6fd; border-radius:12px; padding:12px;">
+            <strong>2. Đặt tính rồi tính:</strong><br/>
+            • Viết hàng đơn vị thẳng cột hàng đơn vị, hàng chục thẳng cột hàng chục.<br/>
+            • Tính lần lượt từ <strong>phải sang trái</strong> (hàng đơn vị trước).
+          </div>
+          <div style="background:#fffbeb; border:1.5px solid #fde68a; border-radius:12px; padding:12px;">
+            <strong>3. Cách tìm x:</strong><br/>
+            • <code>x + a = b</code> hoặc <code>a + x = b</code> → <code>x = b − a</code><br/>
+            • <code>x − a = b</code> → <code>x = b + a</code><br/>
+            • <code>a − x = b</code> → <code>x = a − b</code>
+          </div>
+          <div style="background:#f5f3ff; border:1.5px solid #ddd6fe; border-radius:12px; padding:12px;">
+            <strong>4. Đường gấp khúc:</strong><br/>
+            • Độ dài đường gấp khúc = <strong>Tổng độ dài</strong> các đoạn thẳng của đường gấp khúc đó.
+          </div>
+        </div>
+      </div>
+    </div>
+  </aside>
+
+  <!-- SCOREBOARD MODAL -->
+  <div class="modal-overlay" id="scoreboardModal">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h3>📊 Bảng Điểm 10 Bộ Đề</h3>
+        <button type="button" class="mini-btn" data-close="scoreboardModal">✕ Đóng</button>
+      </div>
+      <div id="scoreboardBody"></div>
+    </div>
+  </div>
+
+  <!-- CONFIRM SUBMIT MODAL -->
+  <div class="modal-overlay" id="confirmSubmitModal">
+    <div class="modal-card" style="max-width:440px;">
+      <div class="modal-head">
+        <h3>📝 Xác nhận nộp bài</h3>
+        <button type="button" class="mini-btn" data-close="confirmSubmitModal">✕</button>
+      </div>
+      <p id="confirmSubmitMsg" style="font-weight:700; font-size:0.98rem; margin-top:0;"></p>
+      <div style="display:flex; justify-content:flex-end; gap:10px; margin-top:16px;">
+        <button type="button" class="secondary-cta" data-close="confirmSubmitModal">Quay lại làm tiếp</button>
+        <button type="button" class="primary-cta" id="forceSubmitBtn">Nộp bài luôn</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- PARENT CORNER MODAL -->
+  <div class="modal-overlay" id="parentModal">
+    <div class="modal-card" style="max-width:460px;">
+      <div class="modal-head">
+        <h3>👨‍👩‍👧 Góc Dành Cho Phụ Huynh</h3>
+        <button type="button" class="mini-btn" data-close="parentModal">✕ Đóng</button>
+      </div>
+      <div id="parentGateView">
+        <p style="font-weight:700; font-size:0.94rem; margin-top:0; color:var(--ink-muted);">
+          Để tránh bé bấm nhầm xem trước đáp án, bố mẹ giải nhanh phép tính nhỏ sau nhé:
+        </p>
+        <div style="display:flex; align-items:center; gap:10px; margin:12px 0;">
+          <span id="parentChallengeText" style="font-size:1.2rem; font-weight:900; color:var(--primary);">8 × 7 =</span>
+          <input type="number" id="parentChallengeInput" class="math-input" placeholder="?" />
+          <button type="button" class="primary-cta" style="padding:9px 18px; font-size:0.95rem;" id="verifyParentBtn">Mở khóa</button>
+        </div>
+        <div id="parentGateError" style="color:var(--bad); font-weight:800; font-size:0.85rem;"></div>
+      </div>
+      <div id="parentControlsView" style="display:none; flex-direction:column; gap:12px;">
+        <p style="font-weight:700; margin:0; color:var(--good);">✅ Đã xác nhận Phụ Huynh!</p>
+        <button type="button" class="secondary-cta" id="parentPeekBtn">
+          👁️ Mở đáp án &amp; chấm thử đề đang xem
+        </button>
+        <button type="button" class="secondary-cta" id="parentResetAllBtn" style="color:var(--bad); border-color:var(--bad-border);">
+          🗑️ Xóa toàn bộ lịch sử làm bài của cả 10 đề
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <script>
+  (function() {
+    "use strict";
+
+    // =========================================================================
+    // 1. COMPLETE DATA FOR ALL 10 EXAMS (FAITHFUL TO SOURCE + DETAILED SOLUTIONS)
+    // =========================================================================
+    const EXAMS = [
+      // ---------------------------- ĐỀ 01 ----------------------------
+      {
+        id: 1,
+        code: "ĐỀ SỐ 01",
+        level: "DỄ",
+        levelKey: "easy",
+        exercises: [
+          {
+            id: "d1b1",
+            title: "Bài 1",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Viết số thích hợp:",
+            items: [
+              {
+                id: "a",
+                parts: ["a) 3 chục 5 đơn vị: ", { ans: 35 }],
+                explain: "3 chục (30) ghép với 5 đơn vị được số 35."
+              },
+              {
+                id: "b",
+                parts: ["b) 7 chục: ", { ans: 70 }],
+                explain: "7 chục gồm 7 ở hàng chục và 0 ở hàng đơn vị nên viết là 70."
+              },
+              {
+                id: "c",
+                parts: ["c) Số liền sau 49: ", { ans: 50 }],
+                explain: "Muốn tìm số liền sau, ta lấy số đó cộng thêm 1: 49 + 1 = 50."
+              },
+              {
+                id: "d",
+                parts: ["d) Số liền trước 80: ", { ans: 79 }],
+                explain: "Muốn tìm số liền trước, ta lấy số đó trừ đi 1: 80 − 1 = 79."
+              }
+            ]
+          },
+          {
+            id: "d1b2",
+            title: "Bài 2",
+            points: 2,
+            type: "compare",
+            prompt: "Điền dấu >, <, = vào chỗ chấm:",
+            items: [
+              { id: "a", left: "36", right: "63", ans: "<", explain: "So sánh chữ số hàng chục: 3 chục < 6 chục nên 36 < 63." },
+              { id: "b", left: "58", right: "58", ans: "=", explain: "Cả hàng chục (5) và hàng đơn vị (8) đều bằng nhau nên 58 = 58." },
+              { id: "c", left: "70", right: "69", ans: ">", explain: "Hàng chục: 7 > 6 nên 70 > 69." },
+              { id: "d", left: "42", right: "24", ans: ">", explain: "Hàng chục: 4 > 2 nên 42 > 24." }
+            ]
+          },
+          {
+            id: "d1b3",
+            title: "Bài 3",
+            points: 2,
+            type: "mental",
+            prompt: "Tính nhẩm:",
+            items: [
+              { id: "a", expr: "20 + 30 =", ans: 50, explain: "2 chục + 3 chục = 5 chục = 50." },
+              { id: "b", expr: "80 − 40 =", ans: 40, explain: "8 chục − 4 chục = 4 chục = 40." },
+              { id: "c", expr: "15 + 4 =", ans: 19, explain: "5 + 4 = 9, giữ nguyên 1 chục → 19." },
+              { id: "d", expr: "19 − 6 =", ans: 13, explain: "9 − 6 = 3, giữ nguyên 1 chục → 13." },
+              { id: "e", expr: "50 + 8 =", ans: 58, explain: "5 chục + 8 đơn vị = 58." },
+              { id: "f", expr: "67 − 7 =", ans: 60, explain: "7 đơn vị trừ 7 đơn vị hết, còn 6 chục = 60." }
+            ]
+          },
+          {
+            id: "d1b4",
+            title: "Bài 4",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 24 + 13", a: 24, op: "+", b: 13, ans: 37,
+                steps: [
+                  "Hàng đơn vị: 4 + 3 = 7, viết 7.",
+                  "Hàng chục: 2 + 1 = 3, viết 3. Vậy 24 + 13 = 37."
+                ]
+              },
+              {
+                id: "b", label: "b) 56 − 22", a: 56, op: "−", b: 22, ans: 34,
+                steps: [
+                  "Hàng đơn vị: 6 − 2 = 4, viết 4.",
+                  "Hàng chục: 5 − 2 = 3, viết 3. Vậy 56 − 22 = 34."
+                ]
+              },
+              {
+                id: "c", label: "c) 35 + 4", a: 35, op: "+", b: 4, ans: 39,
+                steps: [
+                  "Đặt số 4 thẳng cột với số 5 (hàng đơn vị).",
+                  "5 + 4 = 9, viết 9; hạ 3, viết 3. Vậy 35 + 4 = 39."
+                ]
+              },
+              {
+                id: "d", label: "d) 78 − 5", a: 78, op: "−", b: 5, ans: 73,
+                steps: [
+                  "Đặt số 5 thẳng cột với số 8 (hàng đơn vị).",
+                  "8 − 5 = 3, viết 3; hạ 7, viết 7. Vậy 78 − 5 = 73."
+                ]
+              }
+            ]
+          },
+          {
+            id: "d1b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn:",
+            story: "Lớp 2A có 21 bạn nữ và 18 bạn nam. Hỏi lớp 2A có tất cả bao nhiêu học sinh?",
+            unit: "học sinh",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Lớp 2A có tất cả số học sinh là:", valid: true },
+                  { text: "Số học sinh lớp 2A có tất cả là:", valid: true },
+                  { text: "Số bạn nữ nhiều hơn số bạn nam là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 21, op: "+", b: 18, res: 39 }, { a: 18, op: "+", b: 21, res: 39 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 39, unit: "học sinh" }],
+            explain: [
+              "Muốn biết có tất cả bao nhiêu học sinh, ta cộng số bạn nữ và số bạn nam.",
+              "Lời giải: Lớp 2A có tất cả số học sinh là:",
+              "Phép tính: 21 + 18 = 39 (học sinh)",
+              "Đáp số: 39 học sinh."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 02 ----------------------------
+      {
+        id: 2,
+        code: "ĐỀ SỐ 02",
+        level: "DỄ",
+        levelKey: "easy",
+        exercises: [
+          {
+            id: "d2b1",
+            title: "Bài 1",
+            points: 2,
+            type: "order",
+            prompt: "Viết các số 42, 19, 67, 35 theo thứ tự từ bé đến lớn:",
+            numbers: [42, 19, 67, 35],
+            ans: [19, 35, 42, 67],
+            dirLabel: "từ bé đến lớn",
+            explain: "So sánh chữ số hàng chục: 1 < 3 < 4 < 6. Vậy thứ tự từ bé đến lớn là: 19, 35, 42, 67."
+          },
+          {
+            id: "d2b2",
+            title: "Bài 2",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Điền số:",
+            items: [
+              {
+                id: "seq",
+                parts: ["25, 30, 35, ", { ans: 40 }, ", ", { ans: 45 }, ", 50, ", { ans: 55 }],
+                explain: "Quy luật: đếm thêm 5 (mỗi số đứng sau hơn số đứng trước 5 đơn vị): 35 + 5 = 40; 40 + 5 = 45; 50 + 5 = 55."
+              }
+            ]
+          },
+          {
+            id: "d2b3",
+            title: "Bài 3",
+            points: 2,
+            type: "mental",
+            prompt: "Tính:",
+            items: [
+              { id: "a", expr: "32 + 16 =", ans: 48, explain: "2 + 6 = 8, 3 + 1 = 4 → 48." },
+              { id: "b", expr: "75 − 23 =", ans: 52, explain: "5 − 3 = 2, 7 − 2 = 5 → 52." },
+              { id: "c", expr: "40 + 9 =", ans: 49, explain: "4 chục + 9 đơn vị = 49." },
+              { id: "d", expr: "68 − 8 =", ans: 60, explain: "8 đơn vị trừ 8 đơn vị bằng 0, còn 6 chục = 60." }
+            ]
+          },
+          {
+            id: "d2b4",
+            title: "Bài 4",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 47 + 21", a: 47, op: "+", b: 21, ans: 68,
+                steps: ["Hàng đơn vị: 7 + 1 = 8.", "Hàng chục: 4 + 2 = 6. Kết quả: 68."]
+              },
+              {
+                id: "b", label: "b) 86 − 34", a: 86, op: "−", b: 34, ans: 52,
+                steps: ["Hàng đơn vị: 6 − 4 = 2.", "Hàng chục: 8 − 3 = 5. Kết quả: 52."]
+              },
+              {
+                id: "c", label: "c) 53 + 6", a: 53, op: "+", b: 6, ans: 59,
+                steps: ["Đặt 6 thẳng cột hàng đơn vị dưới 3.", "3 + 6 = 9, hạ 5. Kết quả: 59."]
+              },
+              {
+                id: "d", label: "d) 69 − 7", a: 69, op: "−", b: 7, ans: 62,
+                steps: ["Đặt 7 thẳng cột hàng đơn vị dưới 9.", "9 − 7 = 2, hạ 6. Kết quả: 62."]
+              }
+            ]
+          },
+          {
+            id: "d2b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn:",
+            story: "Mai có 36 nhãn vở, Mai cho bạn 12 nhãn vở. Hỏi Mai còn lại bao nhiêu nhãn vở?",
+            unit: "nhãn vở",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Mai còn lại số nhãn vở là:", valid: true },
+                  { text: "Số nhãn vở Mai còn lại là:", valid: true },
+                  { text: "Mai có tất cả số nhãn vở là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 36, op: "-", b: 12, res: 24 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 24, unit: "nhãn vở" }],
+            explain: [
+              "Mai cho bạn bớt đi 12 nhãn vở nên ta làm phép tính trừ.",
+              "Lời giải: Mai còn lại số nhãn vở là:",
+              "Phép tính: 36 − 12 = 24 (nhãn vở)",
+              "Đáp số: 24 nhãn vở."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 03 ----------------------------
+      {
+        id: 3,
+        code: "ĐỀ SỐ 03",
+        level: "CƠ BẢN",
+        levelKey: "basic",
+        exercises: [
+          {
+            id: "d3b1",
+            title: "Bài 1",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Phân tích số:",
+            items: [
+              {
+                id: "a",
+                parts: ["a) 64 = ", { ans: 6 }, " chục ", { ans: 4 }, " đơn vị"],
+                explain: "Số 64 có chữ số hàng chục là 6, chữ số hàng đơn vị là 4."
+              },
+              {
+                id: "b",
+                parts: ["b) 90 = ", { ans: 9 }, " chục ", { ans: 0 }, " đơn vị"],
+                explain: "Số 90 có 9 chục và 0 đơn vị."
+              },
+              {
+                id: "c",
+                parts: ["c) Số gồm 5 chục và 7 đơn vị là: ", { ans: 57 }],
+                explain: "5 chục và 7 đơn vị ghép lại thành số 57."
+              }
+            ]
+          },
+          {
+            id: "d3b2",
+            title: "Bài 2",
+            points: 2,
+            type: "compare",
+            prompt: "Điền dấu >, <, =:",
+            items: [
+              { id: "a", left: "48", right: "4 chục 8 đơn vị", ans: "=", explain: "4 chục 8 đơn vị chính là 48, nên 48 = 48." },
+              { id: "b", left: "92", right: "89", ans: ">", explain: "Hàng chục: 9 > 8 nên 92 > 89." },
+              { id: "c", left: "60 + 5", right: "65", ans: "=", explain: "60 + 5 = 65, nên hai vế bằng nhau (=)." },
+              { id: "d", left: "73 − 3", right: "70", ans: "=", explain: "73 − 3 = 70, nên hai vế bằng nhau (=)." }
+            ]
+          },
+          {
+            id: "d3b3",
+            title: "Bài 3",
+            points: 2,
+            type: "mental",
+            prompt: "Tính:",
+            items: [
+              { id: "a", expr: "27 + 5 =", ans: 32, explain: "27 + 3 = 30, rồi 30 + 2 = 32." },
+              { id: "b", expr: "46 + 8 =", ans: 54, explain: "46 + 4 = 50, rồi 50 + 4 = 54." },
+              { id: "c", expr: "52 − 7 =", ans: 45, explain: "52 − 2 = 50, rồi 50 − 5 = 45." },
+              { id: "d", expr: "61 − 9 =", ans: 52, explain: "61 − 1 = 60, rồi 60 − 8 = 52." }
+            ]
+          },
+          {
+            id: "d3b4",
+            title: "Bài 4",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 38 + 27", a: 38, op: "+", b: 27, ans: 65,
+                steps: [
+                  "Hàng đơn vị: 8 + 7 = 15, viết 5 nhớ 1.",
+                  "Hàng chục: 3 + 2 = 5, thêm 1 bằng 6, viết 6. Kết quả: 65."
+                ]
+              },
+              {
+                id: "b", label: "b) 64 − 28", a: 64, op: "−", b: 28, ans: 36,
+                steps: [
+                  "Hàng đơn vị: 4 không trừ được 8, lấy 14 − 8 = 6, viết 6 nhớ 1.",
+                  "Hàng chục: 2 thêm 1 bằng 3; 6 − 3 = 3, viết 3. Kết quả: 36."
+                ]
+              }
+            ]
+          },
+          {
+            id: "d3b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn:",
+            story: "Trong vườn có 28 cây cam và 35 cây bưởi. Hỏi trong vườn có tất cả bao nhiêu cây cam và cây bưởi?",
+            unit: "cây",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Trong vườn có tất cả số cây cam và cây bưởi là:", valid: true },
+                  { text: "Số cây cam và cây bưởi trong vườn có là:", valid: true },
+                  { text: "Số cây bưởi nhiều hơn số cây cam là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 28, op: "+", b: 35, res: 63 }, { a: 35, op: "+", b: 28, res: 63 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 63, unit: "cây" }],
+            explain: [
+              "Muốn tính tất cả số cây cam và bưởi, ta dùng phép cộng.",
+              "Lời giải: Trong vườn có tất cả số cây cam và cây bưởi là:",
+              "Phép tính: 28 + 35 = 63 (cây)",
+              "Đáp số: 63 cây."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 04 ----------------------------
+      {
+        id: 4,
+        code: "ĐỀ SỐ 04",
+        level: "CƠ BẢN",
+        levelKey: "basic",
+        exercises: [
+          {
+            id: "d4b1",
+            title: "Bài 1",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Viết số thích hợp:",
+            items: [
+              { id: "a", parts: ["a) Số liền trước 60: ", { ans: 59 }], explain: "60 − 1 = 59." },
+              { id: "b", parts: ["b) Số liền sau 89: ", { ans: 90 }], explain: "89 + 1 = 90." },
+              { id: "c", parts: ["c) Số lớn nhất có hai chữ số: ", { ans: 99 }], explain: "Số lớn nhất có hai chữ số là 99 (số tiếp theo là 100 có 3 chữ số)." },
+              { id: "d", parts: ["d) Số bé nhất có hai chữ số: ", { ans: 10 }], explain: "Số bé nhất có hai chữ số là 10 (số trước nó là 9 chỉ có 1 chữ số)." }
+            ]
+          },
+          {
+            id: "d4b2",
+            title: "Bài 2",
+            points: 2,
+            type: "mental",
+            prompt: "Tính nhẩm:",
+            items: [
+              { id: "a", expr: "9 + 6 =", ans: 15, explain: "9 + 1 = 10, 10 + 5 = 15." },
+              { id: "b", expr: "14 − 8 =", ans: 6, explain: "14 − 4 = 10, 10 − 4 = 6." },
+              { id: "c", expr: "30 + 40 =", ans: 70, explain: "3 chục + 4 chục = 7 chục = 70." },
+              { id: "d", expr: "90 − 50 =", ans: 40, explain: "9 chục − 5 chục = 4 chục = 40." },
+              { id: "e", expr: "45 + 5 =", ans: 50, explain: "5 + 5 = 10, 40 + 10 = 50." },
+              { id: "f", expr: "72 − 2 =", ans: 70, explain: "72 bớt 2 đơn vị còn 7 chục = 70." }
+            ]
+          },
+          {
+            id: "d4b3",
+            title: "Bài 3",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Điền số còn thiếu:",
+            items: [
+              {
+                id: "seq",
+                parts: ["18, 28, 38, ", { ans: 48 }, ", ", { ans: 58 }, ", 68."],
+                explain: "Mỗi số tăng thêm 10 đơn vị (1 chục) ở hàng chục, giữ nguyên 8 đơn vị: 38 + 10 = 48; 48 + 10 = 58."
+              }
+            ]
+          },
+          {
+            id: "d4b4",
+            title: "Bài 4",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 46 + 35", a: 46, op: "+", b: 35, ans: 81,
+                steps: [
+                  "Hàng đơn vị: 6 + 5 = 11, viết 1 nhớ 1.",
+                  "Hàng chục: 4 + 3 = 7, thêm 1 bằng 8, viết 8. Kết quả: 81."
+                ]
+              },
+              {
+                id: "b", label: "b) 72 − 46", a: 72, op: "−", b: 46, ans: 26,
+                steps: [
+                  "Hàng đơn vị: 12 − 6 = 6, viết 6 nhớ 1.",
+                  "Hàng chục: 4 thêm 1 bằng 5; 7 − 5 = 2, viết 2. Kết quả: 26."
+                ]
+              }
+            ]
+          },
+          {
+            id: "d4b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn:",
+            story: "Một cửa hàng có 72 quả bóng, đã bán 28 quả. Hỏi cửa hàng còn lại bao nhiêu quả bóng?",
+            unit: "quả bóng",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Cửa hàng còn lại số quả bóng là:", valid: true },
+                  { text: "Số quả bóng cửa hàng còn lại là:", valid: true },
+                  { text: "Cửa hàng có tất cả số quả bóng là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 72, op: "-", b: 28, res: 44 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 44, unit: "quả bóng" }],
+            explain: [
+              "Cửa hàng đã bán 28 quả nên số bóng giảm đi, ta làm phép trừ.",
+              "Lời giải: Cửa hàng còn lại số quả bóng là:",
+              "Phép tính: 72 − 28 = 44 (quả bóng)",
+              "Đáp số: 44 quả bóng."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 05 ----------------------------
+      {
+        id: 5,
+        code: "ĐỀ SỐ 05",
+        level: "TRUNG BÌNH",
+        levelKey: "medium",
+        exercises: [
+          {
+            id: "d5b1",
+            title: "Bài 1",
+            points: 2,
+            type: "mental",
+            prompt: "Tính:",
+            items: [
+              { id: "a", expr: "8 + 7 =", ans: 15, explain: "8 + 2 = 10, 10 + 5 = 15." },
+              { id: "b", expr: "13 − 6 =", ans: 7, explain: "13 − 3 = 10, 10 − 3 = 7." },
+              { id: "c", expr: "9 + 5 =", ans: 14, explain: "9 + 1 = 10, 10 + 4 = 14." },
+              { id: "d", expr: "16 − 9 =", ans: 7, explain: "16 − 6 = 10, 10 − 3 = 7." },
+              { id: "e", expr: "34 + 9 =", ans: 43, explain: "34 + 6 = 40, 40 + 3 = 43." },
+              { id: "f", expr: "53 − 8 =", ans: 45, explain: "53 − 3 = 50, 50 − 5 = 45." }
+            ]
+          },
+          {
+            id: "d5b2",
+            title: "Bài 2",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Điền số thích hợp:",
+            items: [
+              { id: "a", parts: ["26 + ", { ans: 14 }, " = 40"], explain: "Số hạng chưa biết = Tổng − Số hạng đã biết: 40 − 26 = 14." },
+              { id: "b", parts: [{ ans: 47 }, " − 15 = 32"], explain: "Số bị trừ = Hiệu + Số trừ: 32 + 15 = 47." },
+              { id: "c", parts: ["70 − ", { ans: 46 }, " = 24"], explain: "Số trừ = Số bị trừ − Hiệu: 70 − 24 = 46." },
+              { id: "d", parts: ["18 + ", { ans: 7 }, " = 25"], explain: "Số hạng chưa biết = 25 − 18 = 7." }
+            ]
+          },
+          {
+            id: "d5b3",
+            title: "Bài 3",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 29 + 34", a: 29, op: "+", b: 34, ans: 63,
+                steps: [
+                  "Hàng đơn vị: 9 + 4 = 13, viết 3 nhớ 1.",
+                  "Hàng chục: 2 + 3 = 5, thêm 1 bằng 6, viết 6. Kết quả: 63."
+                ]
+              },
+              {
+                id: "b", label: "b) 81 − 56", a: 81, op: "−", b: 56, ans: 25,
+                steps: [
+                  "Hàng đơn vị: 11 − 6 = 5, viết 5 nhớ 1.",
+                  "Hàng chục: 5 thêm 1 bằng 6; 8 − 6 = 2, viết 2. Kết quả: 25."
+                ]
+              }
+            ]
+          },
+          {
+            id: "d5b4",
+            title: "Bài 4",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn:",
+            story: "Một sợi dây dài 65 cm, Lan cắt đi 27 cm. Hỏi sợi dây còn lại dài bao nhiêu xăng-ti-mét?",
+            unit: "cm",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Sợi dây còn lại dài số xăng-ti-mét là:", valid: true },
+                  { text: "Độ dài sợi dây còn lại là:", valid: true },
+                  { text: "Sợi dây lúc đầu dài số xăng-ti-mét là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 65, op: "-", b: 27, res: 38 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 38, unit: "cm" }],
+            explain: [
+              "Cắt đi 27 cm tức là bớt đi, ta dùng phép trừ.",
+              "Lời giải: Sợi dây còn lại dài số xăng-ti-mét là:",
+              "Phép tính: 65 − 27 = 38 (cm)",
+              "Đáp số: 38 cm."
+            ]
+          },
+          {
+            id: "d5b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn:",
+            story: "Hình vẽ có 3 hình tam giác và 2 hình tứ giác. Hỏi có tất cả bao nhiêu hình tam giác và hình tứ giác?",
+            svgType: "shapes_d5",
+            unit: "hình",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Có tất cả số hình tam giác và hình tứ giác là:", valid: true },
+                  { text: "Tổng số hình tam giác và hình tứ giác là:", valid: true },
+                  { text: "Số hình tam giác nhiều hơn hình tứ giác là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 3, op: "+", b: 2, res: 5 }, { a: 2, op: "+", b: 3, res: 5 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 5, unit: "hình" }],
+            explain: [
+              "Đếm gộp 3 hình tam giác và 2 hình tứ giác, ta dùng phép cộng.",
+              "Lời giải: Có tất cả số hình tam giác và hình tứ giác là:",
+              "Phép tính: 3 + 2 = 5 (hình)",
+              "Đáp số: 5 hình."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 06 ----------------------------
+      {
+        id: 6,
+        code: "ĐỀ SỐ 06",
+        level: "TRUNG BÌNH",
+        levelKey: "medium",
+        exercises: [
+          {
+            id: "d6b1",
+            title: "Bài 1",
+            points: 2,
+            type: "order",
+            prompt: "Sắp xếp các số 76, 67, 90, 69, 87 theo thứ tự từ lớn đến bé:",
+            numbers: [76, 67, 90, 69, 87],
+            ans: [90, 87, 76, 69, 67],
+            dirLabel: "từ lớn đến bé",
+            explain: "So sánh hàng chục từ lớn đến bé: 9 > 8 > 7 > 6. Hai số 69 và 67 cùng 6 chục, vì 9 > 7 nên 69 > 67. Thứ tự: 90, 87, 76, 69, 67."
+          },
+          {
+            id: "d6b2",
+            title: "Bài 2",
+            points: 2,
+            type: "mental",
+            prompt: "Tính:",
+            items: [
+              { id: "a", expr: "37 + 26 =", ans: 63, explain: "7 + 6 = 13 viết 3 nhớ 1; 3 + 2 + 1 = 6 → 63." },
+              { id: "b", expr: "84 − 37 =", ans: 47, explain: "14 − 7 = 7 viết 7 nhớ 1; 8 − 4 = 4 → 47." },
+              { id: "c", expr: "48 + 9 =", ans: 57, explain: "48 + 2 = 50, 50 + 7 = 57." },
+              { id: "d", expr: "62 − 8 =", ans: 54, explain: "62 − 2 = 60, 60 − 6 = 54." }
+            ]
+          },
+          {
+            id: "d6b3",
+            title: "Bài 3",
+            points: 2,
+            type: "compare",
+            prompt: "Điền dấu >, <, =:",
+            items: [
+              { id: "a", left: "28 + 17", right: "50", ans: "<", explain: "28 + 17 = 45. Vì 45 < 50 nên điền dấu <." },
+              { id: "b", left: "73 − 29", right: "44", ans: "=", explain: "73 − 29 = 44. Hai vế bằng nhau nên điền dấu =." },
+              { id: "c", left: "36 + 8", right: "43", ans: ">", explain: "36 + 8 = 44. Vì 44 > 43 nên điền dấu >." },
+              { id: "d", left: "91 − 6", right: "85", ans: "=", explain: "91 − 6 = 85. Hai vế bằng nhau nên điền dấu =." }
+            ]
+          },
+          {
+            id: "d6b4",
+            title: "Bài 4",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 56 + 27", a: 56, op: "+", b: 27, ans: 83,
+                steps: [
+                  "Hàng đơn vị: 6 + 7 = 13, viết 3 nhớ 1.",
+                  "Hàng chục: 5 + 2 = 7, thêm 1 bằng 8, viết 8. Kết quả: 83."
+                ]
+              },
+              {
+                id: "b", label: "b) 90 − 38", a: 90, op: "−", b: 38, ans: 52,
+                steps: [
+                  "Hàng đơn vị: 0 không trừ được 8, lấy 10 − 8 = 2, viết 2 nhớ 1.",
+                  "Hàng chục: 3 thêm 1 bằng 4; 9 − 4 = 5, viết 5. Kết quả: 52."
+                ]
+              }
+            ]
+          },
+          {
+            id: "d6b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn:",
+            story: "Thư viện có 45 quyển truyện thiếu nhi và 38 quyển truyện khoa học. Hỏi thư viện có tất cả bao nhiêu quyển truyện?",
+            unit: "quyển truyện",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Thư viện có tất cả số quyển truyện là:", valid: true },
+                  { text: "Số quyển truyện thư viện có tất cả là:", valid: true },
+                  { text: "Truyện thiếu nhi nhiều hơn truyện khoa học là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 45, op: "+", b: 38, res: 83 }, { a: 38, op: "+", b: 45, res: 83 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 83, unit: "quyển truyện" }],
+            explain: [
+              "Cộng số truyện thiếu nhi và số truyện khoa học:",
+              "Lời giải: Thư viện có tất cả số quyển truyện là:",
+              "Phép tính: 45 + 38 = 83 (quyển truyện)",
+              "Đáp số: 83 quyển truyện."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 07 ----------------------------
+      {
+        id: 7,
+        code: "ĐỀ SỐ 07",
+        level: "KHÁ",
+        levelKey: "good",
+        exercises: [
+          {
+            id: "d7b1",
+            title: "Bài 1",
+            points: 2,
+            type: "find_x",
+            prompt: "Tìm x:",
+            items: [
+              {
+                id: "a", eq: "a) x + 18 = 52", ans: 34,
+                validOps: [{ a: 52, op: "-", b: 18 }],
+                explain: "Tìm số hạng chưa biết: x = 52 − 18 → x = 34."
+              },
+              {
+                id: "b", eq: "b) 67 − x = 29", ans: 38,
+                validOps: [{ a: 67, op: "-", b: 29 }],
+                explain: "Tìm số trừ: lấy số bị trừ trừ đi hiệu: x = 67 − 29 → x = 38."
+              },
+              {
+                id: "c", eq: "c) x − 26 = 35", ans: 61,
+                validOps: [{ a: 35, op: "+", b: 26 }, { a: 26, op: "+", b: 35 }],
+                explain: "Tìm số bị trừ: lấy hiệu cộng với số trừ: x = 35 + 26 → x = 61."
+              }
+            ]
+          },
+          {
+            id: "d7b2",
+            title: "Bài 2",
+            points: 2,
+            type: "mental",
+            prompt: "Tính nhanh:",
+            items: [
+              { id: "a", expr: "25 + 17 + 5 =", ans: 47, explain: "Nhóm tròn chục: (25 + 5) + 17 = 30 + 17 = 47." },
+              { id: "b", expr: "48 + 9 − 8 =", ans: 49, explain: "Nhóm tròn chục: (48 − 8) + 9 = 40 + 9 = 49." },
+              { id: "c", expr: "63 − 13 + 20 =", ans: 70, explain: "(63 − 13) + 20 = 50 + 20 = 70." }
+            ]
+          },
+          {
+            id: "d7b3",
+            title: "Bài 3",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 38 + 46", a: 38, op: "+", b: 46, ans: 84,
+                steps: [
+                  "Hàng đơn vị: 8 + 6 = 14, viết 4 nhớ 1.",
+                  "Hàng chục: 3 + 4 = 7, thêm 1 bằng 8, viết 8. Kết quả: 84."
+                ]
+              },
+              {
+                id: "b", label: "b) 92 − 57", a: 92, op: "−", b: 57, ans: 35,
+                steps: [
+                  "Hàng đơn vị: 12 − 7 = 5, viết 5 nhớ 1.",
+                  "Hàng chục: 5 thêm 1 bằng 6; 9 − 6 = 3, viết 3. Kết quả: 35."
+                ]
+              }
+            ]
+          },
+          {
+            id: "d7b4",
+            title: "Bài 4",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn (2 bước):",
+            story: "Một xe chở 36 bao gạo, sau đó chở thêm 27 bao. Người ta đã dỡ xuống 18 bao. Hỏi trên xe còn lại bao nhiêu bao gạo?",
+            unit: "bao gạo",
+            steps: [
+              {
+                label: "Bước 1",
+                sentenceOptions: [
+                  { text: "Sau khi chở thêm, trên xe có số bao gạo là:", valid: true },
+                  { text: "Số bao gạo chở thêm nhiều hơn số bao dỡ xuống là:", valid: true },
+                  { text: "Số bao gạo đã bán đi là:", valid: false }
+                ]
+              },
+              {
+                label: "Bước 2",
+                sentenceOptions: [
+                  { text: "Trên xe còn lại số bao gạo là:", valid: true },
+                  { text: "Số bao gạo còn lại trên xe là:", valid: true },
+                  { text: "Xe chở được tất cả số bao gạo là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 36, op: "+", b: 27, res: 63 }, { a: 63, op: "-", b: 18, res: 45 }],
+              [{ a: 27, op: "+", b: 36, res: 63 }, { a: 63, op: "-", b: 18, res: 45 }],
+              [{ a: 27, op: "-", b: 18, res: 9 }, { a: 36, op: "+", b: 9, res: 45 }],
+              [{ a: 27, op: "-", b: 18, res: 9 }, { a: 9, op: "+", b: 36, res: 45 }],
+              [{ a: 36, op: "-", b: 18, res: 18 }, { a: 18, op: "+", b: 27, res: 45 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 45, unit: "bao gạo" }],
+            explain: [
+              "Bước 1: Sau khi chở thêm, trên xe có số bao gạo là: 36 + 27 = 63 (bao gạo)",
+              "Bước 2: Trên xe còn lại số bao gạo là: 63 − 18 = 45 (bao gạo)",
+              "Đáp số: 45 bao gạo."
+            ]
+          },
+          {
+            id: "d7b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán hình học:",
+            story: "Đường gấp khúc gồm hai đoạn thẳng dài 24 cm và 35 cm. Tính độ dài đường gấp khúc đó.",
+            svgType: "polyline_d7",
+            unit: "cm",
+            steps: [
+              {
+                label: "Bài giải",
+                sentenceOptions: [
+                  { text: "Độ dài đường gấp khúc đó là:", valid: true },
+                  { text: "Đường gấp khúc đó dài là:", valid: true },
+                  { text: "Đoạn thứ hai dài hơn đoạn thứ nhất là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 24, op: "+", b: 35, res: 59 }, { a: 35, op: "+", b: 24, res: 59 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 59, unit: "cm" }],
+            explain: [
+              "Độ dài đường gấp khúc bằng tổng độ dài hai đoạn thẳng:",
+              "Lời giải: Độ dài đường gấp khúc đó là:",
+              "Phép tính: 24 + 35 = 59 (cm)",
+              "Đáp số: 59 cm."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 08 ----------------------------
+      {
+        id: 8,
+        code: "ĐỀ SỐ 08",
+        level: "KHÁ",
+        levelKey: "good",
+        exercises: [
+          {
+            id: "d8b1",
+            title: "Bài 1",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Viết:",
+            items: [
+              { id: "a", parts: ["a) Số gồm 8 chục và 4 đơn vị: ", { ans: 84 }], explain: "8 chục và 4 đơn vị viết là 84." },
+              { id: "b", parts: ["b) Số có 6 chục, 0 đơn vị: ", { ans: 60 }], explain: "6 chục và 0 đơn vị viết là 60." },
+              { id: "c", parts: ["c) Số liền trước 100: ", { ans: 99 }], explain: "100 − 1 = 99." }
+            ]
+          },
+          {
+            id: "d8b2",
+            title: "Bài 2",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Điền số thích hợp:",
+            items: [
+              {
+                id: "seq",
+                parts: ["14, 21, 28, ", { ans: 35 }, ", ", { ans: 42 }, ", 49, ", { ans: 56 }],
+                explain: "Mỗi số đứng sau hơn số đứng trước 7 đơn vị (đếm thêm 7): 28 + 7 = 35; 35 + 7 = 42; 49 + 7 = 56."
+              }
+            ]
+          },
+          {
+            id: "d8b3",
+            title: "Bài 3",
+            points: 2,
+            type: "find_x",
+            prompt: "Tìm x:",
+            items: [
+              {
+                id: "a", eq: "a) 34 + x = 71", ans: 37,
+                validOps: [{ a: 71, op: "-", b: 34 }],
+                explain: "Tìm số hạng chưa biết: x = 71 − 34 → x = 37."
+              },
+              {
+                id: "b", eq: "b) x − 19 = 48", ans: 67,
+                validOps: [{ a: 48, op: "+", b: 19 }, { a: 19, op: "+", b: 48 }],
+                explain: "Tìm số bị trừ: x = 48 + 19 → x = 67."
+              },
+              {
+                id: "c", eq: "c) 86 − x = 39", ans: 47,
+                validOps: [{ a: 86, op: "-", b: 39 }],
+                explain: "Tìm số trừ: x = 86 − 39 → x = 47."
+              }
+            ]
+          },
+          {
+            id: "d8b4",
+            title: "Bài 4",
+            points: 2,
+            type: "vertical",
+            prompt: "Đặt tính rồi tính:",
+            items: [
+              {
+                id: "a", label: "a) 47 + 38", a: 47, op: "+", b: 38, ans: 85,
+                steps: [
+                  "Hàng đơn vị: 7 + 8 = 15, viết 5 nhớ 1.",
+                  "Hàng chục: 4 + 3 = 7, thêm 1 bằng 8, viết 8. Kết quả: 85."
+                ]
+              },
+              {
+                id: "b", label: "b) 83 − 46", a: 83, op: "−", b: 46, ans: 37,
+                steps: [
+                  "Hàng đơn vị: 13 − 6 = 7, viết 7 nhớ 1.",
+                  "Hàng chục: 4 thêm 1 bằng 5; 8 − 5 = 3, viết 3. Kết quả: 37."
+                ]
+              }
+            ]
+          },
+          {
+            id: "d8b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn (2 bước):",
+            story: "An có 52 viên bi. Bình có ít hơn An 17 viên bi. Hỏi cả hai bạn có bao nhiêu viên bi?",
+            unit: "viên bi",
+            steps: [
+              {
+                label: "Bước 1",
+                sentenceOptions: [
+                  { text: "Bình có số viên bi là:", valid: true },
+                  { text: "Số viên bi của Bình là:", valid: true },
+                  { text: "An có số viên bi là:", valid: false }
+                ]
+              },
+              {
+                label: "Bước 2",
+                sentenceOptions: [
+                  { text: "Cả hai bạn có tất cả số viên bi là:", valid: true },
+                  { text: "Số viên bi của cả hai bạn là:", valid: true },
+                  { text: "An có nhiều hơn Bình số viên bi là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 52, op: "-", b: 17, res: 35 }, { a: 52, op: "+", b: 35, res: 87 }],
+              [{ a: 52, op: "-", b: 17, res: 35 }, { a: 35, op: "+", b: 52, res: 87 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 87, unit: "viên bi" }],
+            explain: [
+              "Bước 1 (Tìm số bi của Bình): Bình có số viên bi là: 52 − 17 = 35 (viên bi)",
+              "Bước 2 (Tính tổng của cả hai bạn): Cả hai bạn có tất cả số viên bi là: 52 + 35 = 87 (viên bi)",
+              "Đáp số: 87 viên bi."
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 09 ----------------------------
+      {
+        id: 9,
+        code: "ĐỀ SỐ 09",
+        level: "NÂNG CAO",
+        levelKey: "adv",
+        exercises: [
+          {
+            id: "d9b1",
+            title: "Bài 1",
+            points: 2,
+            type: "mental",
+            prompt: "Tính:",
+            items: [
+              { id: "a", expr: "27 + 18 − 9 =", ans: 36, explain: "Tính từ trái sang phải: 27 + 18 = 45, sau đó 45 − 9 = 36." },
+              { id: "b", expr: "80 − 26 + 14 =", ans: 68, explain: "Tính từ trái sang phải: 80 − 26 = 54, sau đó 54 + 14 = 68." },
+              { id: "c", expr: "39 + 24 − 17 =", ans: 46, explain: "Tính từ trái sang phải: 39 + 24 = 63, sau đó 63 − 17 = 46." }
+            ]
+          },
+          {
+            id: "d9b2",
+            title: "Bài 2",
+            points: 2,
+            type: "find_x",
+            prompt: "Tìm x:",
+            items: [
+              {
+                id: "a", eq: "a) x + 27 = 63", ans: 36,
+                validOps: [{ a: 63, op: "-", b: 27 }],
+                explain: "x = 63 − 27 → x = 36."
+              },
+              {
+                id: "b", eq: "b) 95 − x = 48", ans: 47,
+                validOps: [{ a: 95, op: "-", b: 48 }],
+                explain: "x = 95 − 48 → x = 47."
+              },
+              {
+                id: "c", eq: "c) x − 38 = 29", ans: 67,
+                validOps: [{ a: 29, op: "+", b: 38 }, { a: 38, op: "+", b: 29 }],
+                explain: "x = 29 + 38 → x = 67."
+              }
+            ]
+          },
+          {
+            id: "d9b3",
+            title: "Bài 3",
+            points: 2,
+            type: "compare",
+            prompt: "Điền dấu >, <, =:",
+            items: [
+              { id: "a", left: "46 + 28", right: "80 − 6", ans: "=", explain: "46 + 28 = 74 và 80 − 6 = 74. Vậy 74 = 74." },
+              { id: "b", left: "92 − 37", right: "40 + 15", ans: "=", explain: "92 − 37 = 55 và 40 + 15 = 55. Vậy 55 = 55." },
+              { id: "c", left: "28 + 36", right: "70 − 5", ans: "<", explain: "28 + 36 = 64 và 70 − 5 = 65. Vì 64 < 65 nên điền dấu <." }
+            ]
+          },
+          {
+            id: "d9b4",
+            title: "Bài 4",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn (2 bước):",
+            story: "Một cửa hàng có 85 kg gạo. Buổi sáng bán 28 kg, buổi chiều bán 19 kg. Hỏi cửa hàng còn lại bao nhiêu ki-lô-gam gạo?",
+            unit: "kg",
+            steps: [
+              {
+                label: "Bước 1",
+                sentenceOptions: [
+                  { text: "Cả hai buổi cửa hàng bán được số ki-lô-gam gạo là:", valid: true },
+                  { text: "Sau buổi sáng, cửa hàng còn lại số ki-lô-gam gạo là:", valid: true },
+                  { text: "Buổi sáng bán ít hơn buổi chiều là:", valid: false }
+                ]
+              },
+              {
+                label: "Bước 2",
+                sentenceOptions: [
+                  { text: "Cửa hàng còn lại số ki-lô-gam gạo là:", valid: true },
+                  { text: "Số ki-lô-gam gạo cửa hàng còn lại là:", valid: true },
+                  { text: "Cửa hàng có tất cả số ki-lô-gam gạo là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 28, op: "+", b: 19, res: 47 }, { a: 85, op: "-", b: 47, res: 38 }],
+              [{ a: 19, op: "+", b: 28, res: 47 }, { a: 85, op: "-", b: 47, res: 38 }],
+              [{ a: 85, op: "-", b: 28, res: 57 }, { a: 57, op: "-", b: 19, res: 38 }],
+              [{ a: 85, op: "-", b: 19, res: 66 }, { a: 66, op: "-", b: 28, res: 38 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 38, unit: "kg" }],
+            explain: [
+              "Cách 1: Cả hai buổi bán được: 28 + 19 = 47 (kg). Còn lại: 85 − 47 = 38 (kg).",
+              "Cách 2: Sau buổi sáng còn: 85 − 28 = 57 (kg). Sau buổi chiều còn: 57 − 19 = 38 (kg).",
+              "Đáp số: 38 kg gạo."
+            ]
+          },
+          {
+            id: "d9b5",
+            title: "Bài 5",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Tìm một số, biết rằng lấy số đó cộng với 18 rồi trừ đi 9 thì được 45.",
+            items: [
+              {
+                id: "num",
+                parts: ["Số cần tìm là: ", { ans: 36 }],
+                explain: "Tính ngược từ cuối: Trước khi trừ đi 9, số đó là 45 + 9 = 54. Trước khi cộng thêm 18, số cần tìm là 54 − 18 = 36. Thử lại: 36 + 18 − 9 = 45 (Đúng!)."
+              }
+            ]
+          }
+        ]
+      },
+
+      // ---------------------------- ĐỀ 10 ----------------------------
+      {
+        id: 10,
+        code: "ĐỀ SỐ 10",
+        level: "NÂNG CAO",
+        levelKey: "adv",
+        exercises: [
+          {
+            id: "d10b1",
+            title: "Bài 1",
+            points: 2,
+            type: "mental",
+            prompt: "Tính bằng cách thuận tiện:",
+            items: [
+              { id: "a", expr: "36 + 19 + 4 =", ans: 59, explain: "Nhóm tròn chục: (36 + 4) + 19 = 40 + 19 = 59." },
+              { id: "b", expr: "72 − 28 − 2 =", ans: 42, explain: "Nhóm hai số trừ: 72 − (28 + 2) = 72 − 30 = 42 (hoặc 72 − 2 − 28 = 70 − 28 = 42)." },
+              { id: "c", expr: "45 + 27 − 15 =", ans: 57, explain: "Nhóm tròn chục: (45 − 15) + 27 = 30 + 27 = 57." }
+            ]
+          },
+          {
+            id: "d10b2",
+            title: "Bài 2",
+            points: 2,
+            type: "find_x",
+            prompt: "Tìm x:",
+            items: [
+              {
+                id: "a", eq: "a) x + 36 = 82", ans: 46,
+                validOps: [{ a: 82, op: "-", b: 36 }],
+                explain: "x = 82 − 36 → x = 46."
+              },
+              {
+                id: "b", eq: "b) 74 − x = 28", ans: 46,
+                validOps: [{ a: 74, op: "-", b: 28 }],
+                explain: "x = 74 − 28 → x = 46."
+              },
+              {
+                id: "c", eq: "c) x − 27 = 46", ans: 73,
+                validOps: [{ a: 46, op: "+", b: 27 }, { a: 27, op: "+", b: 46 }],
+                explain: "x = 46 + 27 → x = 73."
+              }
+            ]
+          },
+          {
+            id: "d10b3",
+            title: "Bài 3",
+            points: 2,
+            type: "fill_inline",
+            prompt: "Một số có hai chữ số. Chữ số hàng chục là 5, chữ số hàng đơn vị lớn hơn chữ số hàng chục 2 đơn vị. Số đó là số nào?",
+            items: [
+              {
+                id: "num",
+                parts: ["Số đó là: ", { ans: 57 }],
+                explain: "Chữ số hàng chục là 5. Chữ số hàng đơn vị là: 5 + 2 = 7. Ghép lại ta được số 57."
+              }
+            ]
+          },
+          {
+            id: "d10b4",
+            title: "Bài 4",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán có lời văn (2 câu hỏi):",
+            story: "Có 64 học sinh tham gia hoạt động. Trong đó có 29 học sinh nữ. Hỏi có bao nhiêu học sinh nam? Nếu có thêm 8 học sinh nam tham gia thì lúc đó có bao nhiêu học sinh nam?",
+            unit: "học sinh",
+            steps: [
+              {
+                label: "Ý 1 — Số học sinh nam ban đầu",
+                sentenceOptions: [
+                  { text: "Số học sinh nam ban đầu là:", valid: true },
+                  { text: "Có số học sinh nam là:", valid: true },
+                  { text: "Số học sinh nữ hơn học sinh nam là:", valid: false }
+                ]
+              },
+              {
+                label: "Ý 2 — Số học sinh nam lúc sau",
+                sentenceOptions: [
+                  { text: "Nếu thêm 8 bạn thì lúc đó có số học sinh nam là:", valid: true },
+                  { text: "Lúc đó có số học sinh nam là:", valid: true },
+                  { text: "Tổng số học sinh nam và nữ lúc đầu là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 64, op: "-", b: 29, res: 35 }, { a: 35, op: "+", b: 8, res: 43 }],
+              [{ a: 64, op: "-", b: 29, res: 35 }, { a: 8, op: "+", b: 35, res: 43 }]
+            ],
+            finalAnswers: [
+              { label: "Đáp số 1 (ban đầu):", ans: 35, unit: "học sinh nam" },
+              { label: "Đáp số 2 (lúc sau):", ans: 43, unit: "học sinh nam" }
+            ],
+            explain: [
+              "Ý 1: Số học sinh nam ban đầu là: 64 − 29 = 35 (học sinh)",
+              "Ý 2: Nếu thêm 8 học sinh nam thì lúc đó có số học sinh nam là: 35 + 8 = 43 (học sinh)",
+              "Đáp số: 35 học sinh nam; 43 học sinh nam."
+            ]
+          },
+          {
+            id: "d10b5",
+            title: "Bài 5",
+            points: 2,
+            type: "word",
+            prompt: "Giải bài toán hình học (2 bước):",
+            story: "Đường gấp khúc ABC gồm đoạn AB dài 18 cm, đoạn BC dài hơn AB 7 cm. Tính độ dài đường gấp khúc ABC.",
+            svgType: "polyline_d10",
+            unit: "cm",
+            steps: [
+              {
+                label: "Bước 1",
+                sentenceOptions: [
+                  { text: "Độ dài đoạn thẳng BC là:", valid: true },
+                  { text: "Đoạn BC dài số xăng-ti-mét là:", valid: true },
+                  { text: "Đoạn AB dài hơn đoạn BC là:", valid: false }
+                ]
+              },
+              {
+                label: "Bước 2",
+                sentenceOptions: [
+                  { text: "Độ dài đường gấp khúc ABC là:", valid: true },
+                  { text: "Đường gấp khúc ABC dài là:", valid: true },
+                  { text: "Đoạn thẳng AB dài là:", valid: false }
+                ]
+              }
+            ],
+            validPaths: [
+              [{ a: 18, op: "+", b: 7, res: 25 }, { a: 18, op: "+", b: 25, res: 43 }],
+              [{ a: 7, op: "+", b: 18, res: 25 }, { a: 18, op: "+", b: 25, res: 43 }],
+              [{ a: 18, op: "+", b: 7, res: 25 }, { a: 25, op: "+", b: 18, res: 43 }],
+              [{ a: 7, op: "+", b: 18, res: 25 }, { a: 25, op: "+", b: 18, res: 43 }]
+            ],
+            finalAnswers: [{ label: "Đáp số:", ans: 43, unit: "cm" }],
+            explain: [
+              "Bước 1: Độ dài đoạn thẳng BC là: 18 + 7 = 25 (cm)",
+              "Bước 2: Độ dài đường gấp khúc ABC là: 18 + 25 = 43 (cm)",
+              "Đáp số: 43 cm."
+            ]
+          }
+        ]
+      }
+    ];
+
+    // =========================================================================
+    // 2. STATE MANAGEMENT & LOCALSTORAGE PERSISTENCE
+    // =========================================================================
+    const STORAGE_KEY = "toan_lop_2_giua_ki_1_2026_v1";
+
+    let state = loadState();
+    let timerInterval = null;
+    let timerSeconds = 40 * 60;
+    let timerRunning = false;
+    let parentChallengeAns = 56;
+
+    function defaultState() {
+      return {
+        studentName: "",
+        schoolName: "",
+        soundOn: true,
+        currentExamId: 1,
+        answers: {},    // { [examId]: { [exId]: ... } }
+        results: {}     // { [examId]: { submitted: true, score: number, byEx: {...}, timestamp } }
+      };
+    }
+
+    function loadState() {
+      try {
+        const raw = localStorage.getItem(STORAGE_KEY);
+        if (!raw) return defaultState();
+        const parsed = JSON.parse(raw);
+        return Object.assign(defaultState(), parsed);
+      } catch (e) {
+        return defaultState();
+      }
+    }
+
+    function saveState() {
+      try {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      } catch (e) {}
+    }
+
+    function getExamAnswers(examId) {
+      if (!state.answers[examId]) state.answers[examId] = {};
+      return state.answers[examId];
+    }
+
+    function getExamResult(examId) {
+      return state.results[examId] || null;
+    }
+
+    function isSubmitted(examId) {
+      const r = getExamResult(examId);
+      return Boolean(r && r.submitted);
+    }
+
+    // =========================================================================
+    // 3. SOUND EFFECTS (WEB AUDIO API - SOFT KID-FRIENDLY TONES)
+    // =========================================================================
+    let audioCtx = null;
+    function playTone(type) {
+      if (!state.soundOn) return;
+      try {
+        if (!audioCtx) audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        if (audioCtx.state === "suspended") audioCtx.resume();
+        const now = audioCtx.currentTime;
+        const notes = type === "cheer"
+          ? [523.25, 659.25, 783.99, 1046.5]
+          : type === "click"
+          ? [587.33]
+          : [440, 392];
+        notes.forEach((freq, idx) => {
+          const osc = audioCtx.createOscillator();
+          const gain = audioCtx.createGain();
+          osc.type = "sine";
+          osc.frequency.setValueAtTime(freq, now + idx * 0.08);
+          gain.gain.setValueAtTime(0.08, now + idx * 0.08);
+          gain.gain.exponentialRampToValueAtTime(0.001, now + idx * 0.08 + 0.22);
+          osc.connect(gain);
+          gain.connect(audioCtx.destination);
+          osc.start(now + idx * 0.08);
+          osc.stop(now + idx * 0.08 + 0.24);
+        });
+      } catch (e) {}
+    }
+
+    // =========================================================================
+    // 4. HELPERS & FORMATTING
+    // =========================================================================
+    function formatScore(num) {
+      const rounded = Math.round(num * 100) / 100;
+      return String(rounded).replace(".", ",");
+    }
+
+    function normalizeOp(op) {
+      if (!op) return "";
+      return op === "−" ? "-" : op;
+    }
+
+    function parseNum(val) {
+      if (val === undefined || val === null) return null;
+      const str = String(val).trim();
+      if (str === "") return null;
+      const n = Number(str);
+      return Number.isFinite(n) ? n : null;
+    }
+
+    function levelBadgeClass(levelKey) {
+      return {
+        easy: "lvl-easy",
+        basic: "lvl-basic",
+        medium: "lvl-medium",
+        good: "lvl-good",
+        adv: "lvl-adv"
+      }[levelKey] || "lvl-basic";
+    }
+
+    function levelColors(levelKey) {
+      return {
+        easy: { bg: "#ecfdf5", color: "#065f46" },
+        basic: { bg: "#f0f9ff", color: "#075985" },
+        medium: { bg: "#fffbeb", color: "#92400e" },
+        good: { bg: "#fff7ed", color: "#9a3412" },
+        adv: { bg: "#f5f3ff", color: "#5b21b6" }
+      }[levelKey] || { bg: "#f0f9ff", color: "#075985" };
+    }
+
+    function renderSvgDiagram(svgType) {
+      if (svgType === "shapes_d5") {
+        return `
+          <div class="word-illustration" aria-label="Hình minh họa 3 tam giác và 2 tứ giác">
+            <svg width="215" height="62" viewBox="0 0 215 62">
+              <polygon points="22,10 6,52 38,52" fill="#fde68a" stroke="#d97706" stroke-width="2"/>
+              <polygon points="62,10 46,52 78,52" fill="#a7f3d0" stroke="#059669" stroke-width="2"/>
+              <polygon points="102,10 86,52 118,52" fill="#bae6fd" stroke="#0284c7" stroke-width="2"/>
+              <rect x="130" y="14" width="34" height="36" rx="2" fill="#ddd6fe" stroke="#7c3aed" stroke-width="2"/>
+              <polygon points="175,14 205,14 210,50 170,50" fill="#fecaca" stroke="#dc2626" stroke-width="2"/>
+            </svg>
+          </div>
+        `;
+      }
+      if (svgType === "polyline_d7") {
+        return `
+          <div class="word-illustration" aria-label="Đường gấp khúc 24 cm và 35 cm">
+            <svg width="215" height="72" viewBox="0 0 215 72">
+              <polyline points="16,52 95,18 198,52" fill="none" stroke="#0f766e" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="16" cy="52" r="4.5" fill="#f59e0b"/>
+              <circle cx="95" cy="18" r="4.5" fill="#f59e0b"/>
+              <circle cx="198" cy="52" r="4.5" fill="#f59e0b"/>
+              <text x="42" y="26" font-size="12" font-weight="800" fill="#0f766e">24 cm</text>
+              <text x="140" y="26" font-size="12" font-weight="800" fill="#0f766e">35 cm</text>
+            </svg>
+          </div>
+        `;
+      }
+      if (svgType === "polyline_d10") {
+        return `
+          <div class="word-illustration" aria-label="Đường gấp khúc ABC">
+            <svg width="230" height="76" viewBox="0 0 230 76">
+              <polyline points="20,52 95,18 208,52" fill="none" stroke="#7c3aed" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+              <circle cx="20" cy="52" r="4.5" fill="#f59e0b"/>
+              <circle cx="95" cy="18" r="4.5" fill="#f59e0b"/>
+              <circle cx="208" cy="52" r="4.5" fill="#f59e0b"/>
+              <text x="12" y="69" font-size="12" font-weight="900" fill="#1e293b">A</text>
+              <text x="91" y="13" font-size="12" font-weight="900" fill="#1e293b">B</text>
+              <text x="206" y="69" font-size="12" font-weight="900" fill="#1e293b">C</text>
+              <text x="36" y="27" font-size="11.5" font-weight="800" fill="#7c3aed">18 cm</text>
+              <text x="138" y="26" font-size="11" font-weight="800" fill="#b91c1c">? cm (+7 cm)</text>
+            </svg>
+          </div>
+        `;
+      }
+      return "";
+    }
+
+    // =========================================================================
+    // 5. CHECK IF AN EXERCISE HAS USER INPUT & GRADE AN EXAM
+    // =========================================================================
+    function getExerciseProgress(exam, ex) {
+      const ea = getExamAnswers(exam.id)[ex.id] || {};
+      let hasAny = false;
+      let allFilled = true;
+
+      if (ex.type === "fill_inline") {
+        ex.items.forEach((item) => {
+          const blanks = item.parts.filter(p => typeof p === "object");
+          blanks.forEach((_, idx) => {
+            const v = ea[item.id + "_" + idx];
+            if (v !== undefined && String(v).trim() !== "") hasAny = true;
+            else allFilled = false;
+          });
+        });
+      } else if (ex.type === "compare" || ex.type === "mental") {
+        ex.items.forEach((item) => {
+          const v = ea[item.id];
+          if (v !== undefined && String(v).trim() !== "") hasAny = true;
+          else allFilled = false;
+        });
+      } else if (ex.type === "order") {
+        const arr = Array.isArray(ea.order) ? ea.order : [];
+        if (arr.length > 0) hasAny = true;
+        if (arr.length < ex.numbers.length) allFilled = false;
+      } else if (ex.type === "vertical") {
+        ex.items.forEach((item) => {
+          const o = ea[item.id] || {};
+          const t = String(o.tens ?? "").trim();
+          const u = String(o.units ?? "").trim();
+          if (t !== "" || u !== "") hasAny = true;
+          if (t === "" && u === "") allFilled = false;
+        });
+      } else if (ex.type === "find_x") {
+        ex.items.forEach((item) => {
+          const o = ea[item.id] || {};
+          const hasRes = o.res !== undefined && String(o.res).trim() !== "";
+          const hasAnyPart = (o.a !== undefined && String(o.a).trim() !== "") || Boolean(o.op) || (o.b !== undefined && String(o.b).trim() !== "");
+          if (hasRes || hasAnyPart) hasAny = true;
+          if (!hasRes) allFilled = false;
+        });
+      } else if (ex.type === "word") {
+        ex.steps.forEach((st, idx) => {
+          const sa = ea["step_" + idx] || {};
+          const hasCalc = sa.a !== undefined && String(sa.a).trim() !== "" && sa.op && sa.b !== undefined && String(sa.b).trim() !== "" && sa.res !== undefined && String(sa.res).trim() !== "";
+          const hasAnyPart = (sa.a !== undefined && String(sa.a).trim() !== "") || Boolean(sa.op) || (sa.b !== undefined && String(sa.b).trim() !== "") || (sa.res !== undefined && String(sa.res).trim() !== "");
+          const hasSent = sa.sentenceChoice !== undefined && sa.sentenceChoice !== "" && (sa.sentenceChoice !== "__custom__" || (sa.customSentence && sa.customSentence.trim() !== ""));
+          if (hasCalc || hasAnyPart || hasSent) hasAny = true;
+          if (!hasCalc) allFilled = false;
+        });
+        ex.finalAnswers.forEach((_, idx) => {
+          const fv = ea["final_" + idx];
+          if (fv !== undefined && String(fv).trim() !== "") hasAny = true;
+          else allFilled = false;
+        });
+      }
+
+      return { hasAny, allFilled };
+    }
+
+    function countExerciseProgress(exam) {
+      let doneExercises = 0;
+      let emptyCount = 0;
+
+      exam.exercises.forEach((ex) => {
+        const { hasAny, allFilled } = getExerciseProgress(exam, ex);
+        if (hasAny) doneExercises++;
+        if (!allFilled) emptyCount++;
+      });
+
+      return { doneExercises, emptyCount };
+    }
+
+    function gradeExam(exam) {
+      const ansMap = getExamAnswers(exam.id);
+      const byEx = {};
+      let totalScore = 0;
+
+      exam.exercises.forEach((ex) => {
+        const ea = ansMap[ex.id] || {};
+        const exRes = { earned: 0, max: ex.points, items: {} };
+
+        if (ex.type === "fill_inline") {
+          const perItem = ex.points / ex.items.length;
+          ex.items.forEach((item) => {
+            const blanks = item.parts.filter(p => typeof p === "object");
+            let rightCount = 0;
+            const userVals = [];
+            blanks.forEach((b, idx) => {
+              const u = parseNum(ea[item.id + "_" + idx]);
+              userVals.push(u);
+              if (u === b.ans) rightCount++;
+            });
+            const ratio = rightCount / blanks.length;
+            exRes.earned += perItem * ratio;
+            exRes.items[item.id] = {
+              status: ratio === 1 ? "good" : ratio > 0 ? "partial" : "bad",
+              userVals,
+              expectedVals: blanks.map(b => b.ans)
+            };
+          });
+        } else if (ex.type === "compare") {
+          const perItem = ex.points / ex.items.length;
+          ex.items.forEach((item) => {
+            const u = ea[item.id] || "";
+            const ok = u === item.ans;
+            if (ok) exRes.earned += perItem;
+            exRes.items[item.id] = { status: ok ? "good" : "bad", user: u, expected: item.ans };
+          });
+        } else if (ex.type === "mental") {
+          const perItem = ex.points / ex.items.length;
+          ex.items.forEach((item) => {
+            const u = parseNum(ea[item.id]);
+            const ok = u === item.ans;
+            if (ok) exRes.earned += perItem;
+            exRes.items[item.id] = { status: ok ? "good" : "bad", user: u, expected: item.ans };
+          });
+        } else if (ex.type === "order") {
+          const arr = Array.isArray(ea.order) ? ea.order : [];
+          const ok = arr.length === ex.ans.length && arr.every((v, i) => v === ex.ans[i]);
+          if (ok) exRes.earned = ex.points;
+          exRes.items.order = { status: ok ? "good" : "bad", user: arr, expected: ex.ans };
+        } else if (ex.type === "vertical") {
+          const perItem = ex.points / ex.items.length;
+          ex.items.forEach((item) => {
+            const o = ea[item.id] || {};
+            const tStr = (o.tens ?? "").trim();
+            const uStr = (o.units ?? "").trim();
+            let userNum = null;
+            if (tStr !== "" || uStr !== "") {
+              userNum = parseNum((tStr === "" ? "0" : tStr) + (uStr === "" ? "" : uStr));
+              if (uStr === "" && tStr !== "") userNum = parseNum(tStr);
+            }
+            const ok = userNum === item.ans;
+            if (ok) exRes.earned += perItem;
+            exRes.items[item.id] = { status: ok ? "good" : "bad", user: userNum, expected: item.ans };
+          });
+        } else if (ex.type === "find_x") {
+          const perItem = ex.points / ex.items.length;
+          ex.items.forEach((item) => {
+            const o = ea[item.id] || {};
+            const ua = parseNum(o.a);
+            const ub = parseNum(o.b);
+            const uop = normalizeOp(o.op);
+            const ures = parseNum(o.res);
+
+            const stepOk = item.validOps.some(vo => vo.a === ua && vo.op === uop && vo.b === ub);
+            const resOk = ures === item.ans;
+            const stepUntouched = ua === null && ub === null && !uop;
+
+            let ratio = 0;
+            let status = "bad";
+            let note = "";
+
+            if (stepOk && resOk) {
+              ratio = 1;
+              status = "good";
+            } else if (resOk && stepUntouched) {
+              ratio = 0.5;
+              status = "partial";
+              note = `Đúng x = ${item.ans} nhưng bé thiếu dòng bước tính ở giữa nhé!`;
+            } else if (resOk) {
+              ratio = 0.5;
+              status = "partial";
+              note = `Đúng kết quả x = ${item.ans} nhưng phép tính bước 1 chưa đúng!`;
+            } else if (stepOk) {
+              ratio = 0.5;
+              status = "partial";
+              note = `Đúng cách tìm x rồi! Chỉ nhầm ở kết quả cuối (đáp án đúng là ${item.ans}).`;
+            } else {
+              note = `Chưa đúng. Đáp án đúng: x = ${item.validOps[0].a} ${item.validOps[0].op === "-" ? "−" : "+"} ${item.validOps[0].b}, suy ra x = ${item.ans}.`;
+            }
+
+            exRes.earned += perItem * ratio;
+            exRes.items[item.id] = { status, note, expected: item.ans };
+          });
+        } else if (ex.type === "word") {
+          // Evaluate steps against validPaths
+          const numSteps = ex.steps.length;
+          const stepInputs = ex.steps.map((st, idx) => {
+            const sa = ea["step_" + idx] || {};
+            const sentChoice = sa.sentenceChoice;
+            let sentOk = false;
+            if (sentChoice === "__custom__") {
+              sentOk = typeof sa.customSentence === "string" && sa.customSentence.trim().length >= 5;
+            } else if (sentChoice !== undefined && sentChoice !== "") {
+              const opt = st.sentenceOptions[Number(sentChoice)];
+              sentOk = Boolean(opt && opt.valid);
+            }
+            return {
+              sentOk,
+              a: parseNum(sa.a),
+              op: normalizeOp(sa.op),
+              b: parseNum(sa.b),
+              res: parseNum(sa.res)
+            };
+          });
+
+          // Pick best matching path
+          let bestPathScore = -1;
+          let bestStepStatuses = [];
+          ex.validPaths.forEach((path) => {
+            let score = 0;
+            const statuses = [];
+            for (let i = 0; i < numSteps; i++) {
+              const inp = stepInputs[i];
+              const tgt = path[i];
+              const exprOk = inp.a === tgt.a && inp.op === tgt.op && inp.b === tgt.b;
+              const resOk = inp.res === tgt.res;
+              let calcScore = 0;
+              if (exprOk && resOk) calcScore = 1;
+              else if (exprOk) calcScore = 0.5;
+              else if (resOk && inp.a !== null && inp.b !== null && (inp.op === "+" ? inp.a + inp.b === inp.res : inp.a - inp.b === inp.res) && inp.op === tgt.op) {
+                calcScore = 0.25;
+              }
+              score += (inp.sentOk ? 0.35 : 0) + calcScore;
+              statuses.push({ sentOk: inp.sentOk, exprOk, resOk, expectedStep: tgt });
+            }
+            if (score > bestPathScore) {
+              bestPathScore = score;
+              bestStepStatuses = statuses;
+            }
+          });
+
+          // Final answers check
+          const finalChecks = ex.finalAnswers.map((fa, idx) => {
+            const fv = parseNum(ea["final_" + idx]);
+            return { ok: fv === fa.ans, user: fv, expected: fa.ans, unit: fa.unit };
+          });
+
+          const sentWeight = numSteps === 1 ? 0.5 : 0.25;
+          const calcWeight = numSteps === 1 ? 1.0 : 0.5;
+          const finalWeight = 0.5 / ex.finalAnswers.length;
+
+          let earned = 0;
+          bestStepStatuses.forEach((st) => {
+            if (st.sentOk) earned += sentWeight;
+            if (st.exprOk && st.resOk) earned += calcWeight;
+            else if (st.exprOk) earned += calcWeight * 0.5;
+          });
+          finalChecks.forEach((fc) => {
+            if (fc.ok) earned += finalWeight;
+          });
+
+          exRes.earned = Math.min(ex.points, earned);
+          exRes.items.word = {
+            stepStatuses: bestStepStatuses,
+            finalChecks,
+            status: exRes.earned >= ex.points - 0.01 ? "good" : exRes.earned > 0 ? "partial" : "bad"
+          };
+        }
+
+        exRes.earned = Math.round(exRes.earned * 100) / 100;
+        totalScore += exRes.earned;
+        byEx[ex.id] = exRes;
+      });
+
+      totalScore = Math.min(10, Math.round(totalScore * 100) / 100);
+      return {
+        submitted: true,
+        score: totalScore,
+        byEx,
+        timestamp: Date.now()
+      };
+    }
+
+    // =========================================================================
+    // 6. TEACHER COMMENT GENERATOR
+    // =========================================================================
+    function getTeacherFeedback(score, exam) {
+      const name = state.studentName ? `Bé ${state.studentName}` : "Bé";
+      if (score === 10) {
+        return {
+          stars: "⭐⭐⭐",
+          title: `Xuất sắc! ${name} đạt điểm 10 tròn trĩnh!`,
+          comment: `Bài làm rất cẩn thận, chính xác cả 5 bài của ${exam.code}. Thầy/Cô khen ngợi tinh thần học tập tuyệt vời của con!`,
+          isGood: true
+        };
+      }
+      if (score >= 8.5) {
+        return {
+          stars: "⭐⭐⭐",
+          title: `Giỏi lắm! ${name} làm rất tốt!`,
+          comment: `Con nắm vững kiến thức cơ bản của ${exam.code}. Hãy xem lại một vài chi tiết nhỏ bên dưới để đạt điểm 10 ở lần sau nhé!`,
+          isGood: true
+        };
+      }
+      if (score >= 6.5) {
+        return {
+          stars: "⭐⭐☆",
+          title: `Khá tốt! ${name} cần cẩn thận thêm một chút!`,
+          comment: `Con đã hoàn thành ${exam.code} khá ổn, tuy nhiên vẫn còn một số lỗi tính toán hoặc trình bày. Con hãy xem kỹ lời giải từng bước bên dưới nhé!`,
+          isGood: true
+        };
+      }
+      return {
+        stars: "⭐☆☆",
+        title: `${name} cố gắng lên nhé!`,
+        comment: `Con đã hoàn thành bài làm rồi! Bố mẹ hãy cùng con xem lại lời giải chi tiết từng bài bên dưới và thử làm lại đề này để nhớ kiến thức vững hơn nhé!`,
+        isGood: false
+      };
+    }
+
+    // =========================================================================
+    // 7. CONFETTI CELEBRATION (LIGHTWEIGHT)
+    // =========================================================================
+    function launchConfetti() {
+      const canvas = document.getElementById("confettiCanvas");
+      const ctx = canvas.getContext("2d");
+      canvas.width = window.innerWidth;
+      canvas.height = window.innerHeight;
+      const colors = ["#10b981", "#f59e0b", "#0ea5e9", "#ec4899", "#8b5cf6"];
+      const pieces = Array.from({ length: 95 }, () => ({
+        x: Math.random() * canvas.width,
+        y: Math.random() * -canvas.height * 0.6,
+        w: 8 + Math.random() * 6,
+        h: 5 + Math.random() * 5,
+        vy: 2.5 + Math.random() * 3.5,
+        vx: (Math.random() - 0.5) * 2.5,
+        rot: Math.random() * Math.PI * 2,
+        vr: (Math.random() - 0.5) * 0.15,
+        color: colors[Math.floor(Math.random() * colors.length)]
+      }));
+
+      let frames = 0;
+      function draw() {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        pieces.forEach((p) => {
+          p.x += p.vx;
+          p.y += p.vy;
+          p.rot += p.vr;
+          ctx.save();
+          ctx.translate(p.x, p.y);
+          ctx.rotate(p.rot);
+          ctx.fillStyle = p.color;
+          ctx.fillRect(-p.w / 2, -p.h / 2, p.w, p.h);
+          ctx.restore();
+        });
+        frames++;
+        if (frames < 140) requestAnimationFrame(draw);
+        else ctx.clearRect(0, 0, canvas.width, canvas.height);
+      }
+      draw();
+    }
+
+    // =========================================================================
+    // 8. RENDER UI FUNCTIONS
+    // =========================================================================
+    function renderAll() {
+      renderTopStats();
+      renderExamSelector();
+      renderActiveExam();
+    }
+
+    function renderTopStats() {
+      const submittedCount = EXAMS.filter(e => isSubmitted(e.id)).length;
+      document.getElementById("overallSummaryText").textContent = `${submittedCount}/10 đề`;
+      const name = state.studentName ? `Bé ${state.studentName}` : "Bé";
+      document.getElementById("greetingText").textContent = submittedCount === 10
+        ? `Chúc mừng ${name} đã hoàn thành xuất sắc cả 10 bộ đề! 🏆`
+        : `Chào ${name}! Chọn một đề để làm bài và chấm điểm nhé 🌟`;
+      document.getElementById("soundToggleBtn").textContent = state.soundOn ? "🔊 Âm thanh" : "🔇 Đã tắt tiếng";
+    }
+
+    function renderExamSelector() {
+      const grid = document.getElementById("examGrid");
+      grid.innerHTML = "";
+
+      EXAMS.forEach((exam) => {
+        const res = getExamResult(exam.id);
+        const prog = countExerciseProgress(exam);
+        const active = state.currentExamId === exam.id;
+
+        const btn = document.createElement("button");
+        btn.type = "button";
+        btn.className = "exam-card-btn" + (active ? " active" : "") + (res ? " done" : "");
+        btn.addEventListener("click", () => {
+          state.currentExamId = exam.id;
+          saveState();
+          resetTimer(false);
+          playTone("click");
+          renderAll();
+          document.getElementById("paperSheet").scrollIntoView({ behavior: "smooth", block: "start" });
+        });
+
+        let statusHtml = "";
+        if (res) {
+          const stars = res.score >= 8.5 ? "⭐⭐⭐" : res.score >= 6.5 ? "⭐⭐" : "⭐";
+          statusHtml = `<span class="score-pill">${formatScore(res.score)}/10</span><span>${stars}</span>`;
+        } else if (prog.doneExercises > 0) {
+          statusHtml = `<span style="color:var(--sky)">Đang làm (${prog.doneExercises}/5)</span><span>✏️</span>`;
+        } else {
+          statusHtml = `<span>Chưa làm</span><span>🔒</span>`;
+        }
+
+        btn.innerHTML = `
+          <div class="exam-card-head">
+            <span class="exam-num">${exam.code.replace("ĐỀ SỐ ", "Đề ")}</span>
+            <span class="lvl-tag ${levelBadgeClass(exam.levelKey)}">${exam.level}</span>
+          </div>
+          <div class="exam-card-status">${statusHtml}</div>
+        `;
+        grid.appendChild(btn);
+      });
+    }
+
+    function renderActiveExam() {
+      const exam = EXAMS.find(e => e.id === state.currentExamId) || EXAMS[0];
+      const result = getExamResult(exam.id);
+      const submitted = Boolean(result && result.submitted);
+
+      // Student info inputs
+      document.getElementById("schoolInput").value = state.schoolName || "";
+      document.getElementById("studentNameInput").value = state.studentName || "";
+
+      // Level badge
+      const colors = levelColors(exam.levelKey);
+      const badgeEl = document.getElementById("examLevelBadge");
+      badgeEl.textContent = `${exam.code} • MỨC ĐỘ: ${exam.level}`;
+      badgeEl.style.background = colors.bg;
+      badgeEl.style.color = colors.color;
+
+      // Lock notice
+      const lockNotice = document.getElementById("examLockNotice");
+      if (submitted) {
+        lockNotice.innerHTML = `✅ Đã chấm điểm <strong>${exam.code}</strong> — Bé xem đúng/sai và lời giải bên dưới`;
+        lockNotice.style.background = "#dcfce7";
+        lockNotice.style.borderColor = "#86efac";
+        lockNotice.style.color = "#15803d";
+      } else {
+        lockNotice.innerHTML = `🔒 Đáp án đang cất kỹ — Làm xong bấm <strong>"Nộp bài"</strong> để xem điểm &amp; lời giải`;
+        lockNotice.style.background = "#fff7ed";
+        lockNotice.style.borderColor = "#fdba74";
+        lockNotice.style.color = "#9a3412";
+      }
+
+      // Report Card (ONLY shown if submitted)
+      const reportCard = document.getElementById("reportCard");
+      if (submitted) {
+        const fb = getTeacherFeedback(result.score, exam);
+        reportCard.className = "report-card show" + (fb.isGood ? "" : " needs-practice");
+        const partBadges = exam.exercises.map((ex) => {
+          const r = result.byEx[ex.id];
+          const icon = r.earned >= r.max - 0.01 ? "✅" : r.earned > 0 ? "🟡" : "❌";
+          return `<span class="part-score-badge">${icon} ${ex.title}: ${formatScore(r.earned)}/${ex.points} đ</span>`;
+        }).join("");
+
+        reportCard.innerHTML = `
+          <div class="report-top">
+            <div class="report-score-circle">
+              <div class="score-big">
+                <span class="num">${formatScore(result.score)}</span>
+                <span class="denom">trên 10 điểm</span>
+              </div>
+              <div class="teacher-note">
+                <div class="stars">${fb.stars}</div>
+                <h2>${fb.title}</h2>
+                <p>${fb.comment}</p>
+              </div>
+            </div>
+            <div style="display:flex; gap:8px; flex-wrap:wrap;">
+              <button type="button" class="secondary-cta" id="topRetakeBtn">🔄 Làm lại đề này</button>
+              ${exam.id < 10 ? `<button type="button" class="primary-cta" style="padding:10px 18px; font-size:0.95rem;" id="topNextBtn">➡️ Làm Đề ${String(exam.id + 1).padStart(2, "0")}</button>` : ""}
+            </div>
+          </div>
+          <div class="part-scores">${partBadges}</div>
+        `;
+
+        document.getElementById("topRetakeBtn").addEventListener("click", () => retakeExam(exam.id));
+        const nextBtn = document.getElementById("topNextBtn");
+        if (nextBtn) nextBtn.addEventListener("click", () => goToNextExam(exam.id));
+      } else {
+        reportCard.className = "report-card";
+        reportCard.innerHTML = "";
+      }
+
+      // Render Exercises
+      const body = document.getElementById("paperBody");
+      body.innerHTML = "";
+      exam.exercises.forEach((ex, index) => {
+        body.appendChild(renderExerciseCard(exam, ex, index, result));
+      });
+
+      updateProgressUI(exam, result);
+      renderBottomDock(exam, result);
+    }
+
+    function updateProgressUI(exam, result) {
+      const prog = countExerciseProgress(exam);
+      const submitted = Boolean(result && result.submitted);
+
+      const jumpContainer = document.getElementById("jumpPills");
+      jumpContainer.innerHTML = "";
+      exam.exercises.forEach((ex) => {
+        const pill = document.createElement("button");
+        pill.type = "button";
+        pill.className = "jump-pill";
+        pill.textContent = ex.title;
+
+        if (submitted) {
+          const er = result.byEx[ex.id];
+          if (er.earned >= er.max - 0.01) pill.classList.add("graded-good");
+          else if (er.earned > 0) pill.classList.add("graded-warn");
+          else pill.classList.add("graded-bad");
+        } else {
+          if (getExerciseProgress(exam, ex).hasAny) pill.classList.add("filled");
+        }
+
+        pill.addEventListener("click", () => {
+          document.getElementById("card-" + ex.id)?.scrollIntoView({ behavior: "smooth", block: "center" });
+        });
+        jumpContainer.appendChild(pill);
+      });
+
+      document.getElementById("completionLabel").textContent = submitted
+        ? `Điểm: ${formatScore(result.score)} / 10 điểm`
+        : `Đã làm: ${prog.doneExercises}/5 bài`;
+
+      const bottomText = document.getElementById("bottomProgressText");
+      if (submitted) {
+        bottomText.innerHTML = `✅ Đề này đã được chấm điểm (<strong>${formatScore(result.score)}/10</strong>). Bé có thể xem lại lời giải từng bài hoặc làm lại nhé!`;
+      } else if (prog.emptyCount === 0) {
+        bottomText.innerHTML = `🌟 Tuyệt vời! Bé đã điền đủ cả 5 bài rồi. Bấm <strong>Nộp bài</strong> để xem kết quả nhé!`;
+      } else {
+        bottomText.innerHTML = `Bé đã làm <strong>${prog.doneExercises}/5 bài</strong>. Kiểm tra lại rồi bấm Nộp bài khi làm xong nhé!`;
+      }
+    }
+
+    function renderBottomDock(exam, result) {
+      const actions = document.getElementById("bottomActions");
+      actions.innerHTML = "";
+      const submitted = Boolean(result && result.submitted);
+
+      if (!submitted) {
+        const clearBtn = document.createElement("button");
+        clearBtn.type = "button";
+        clearBtn.className = "secondary-cta";
+        clearBtn.textContent = "🧹 Xóa làm lại";
+        clearBtn.addEventListener("click", () => retakeExam(exam.id));
+
+        const submitBtn = document.createElement("button");
+        submitBtn.type = "button";
+        submitBtn.className = "primary-cta";
+        submitBtn.innerHTML = `✅ Nộp bài &amp; Chấm điểm ${exam.code.replace("ĐỀ SỐ ", "Đề ")}`;
+        submitBtn.addEventListener("click", () => handleSubmitAttempt(exam));
+
+        actions.appendChild(clearBtn);
+        actions.appendChild(submitBtn);
+      } else {
+        const retakeBtn = document.createElement("button");
+        retakeBtn.type = "button";
+        retakeBtn.className = "secondary-cta";
+        retakeBtn.textContent = "🔄 Làm lại đề này";
+        retakeBtn.addEventListener("click", () => retakeExam(exam.id));
+        actions.appendChild(retakeBtn);
+
+        if (exam.id < 10) {
+          const nextBtn = document.createElement("button");
+          nextBtn.type = "button";
+          nextBtn.className = "primary-cta";
+          nextBtn.innerHTML = `➡️ Chuyển sang Đề ${String(exam.id + 1).padStart(2, "0")}`;
+          nextBtn.addEventListener("click", () => goToNextExam(exam.id));
+          actions.appendChild(nextBtn);
+        }
+      }
+    }
+
+    // =========================================================================
+    // 9. EXERCISE CARD RENDERERS (ALL 7 INTERACTIVE QUESTION TYPES)
+    // =========================================================================
+    function renderExerciseCard(exam, ex, index, result) {
+      const submitted = Boolean(result && result.submitted);
+      const exRes = submitted ? result.byEx[ex.id] : null;
+      const ea = getExamAnswers(exam.id)[ex.id] || (getExamAnswers(exam.id)[ex.id] = {});
+
+      const card = document.createElement("section");
+      card.id = "card-" + ex.id;
+      card.className = "ex-card";
+      if (submitted) {
+        if (exRes.earned >= exRes.max - 0.01) card.classList.add("is-correct");
+        else if (exRes.earned > 0) card.classList.add("is-partial");
+        else card.classList.add("is-wrong");
+      }
+
+      // Header
+      const hdr = document.createElement("div");
+      hdr.className = "ex-header";
+      let resultTag = "";
+      if (submitted) {
+        if (exRes.earned >= exRes.max - 0.01) {
+          resultTag = `<span class="ex-result-tag good">✅ Đúng trọn vẹn (${formatScore(exRes.earned)}/${ex.points} đ)</span>`;
+        } else if (exRes.earned > 0) {
+          resultTag = `<span class="ex-result-tag warn">🟡 Đúng một phần (${formatScore(exRes.earned)}/${ex.points} đ)</span>`;
+        } else {
+          resultTag = `<span class="ex-result-tag bad">❌ Cần xem lại (0/${ex.points} đ)</span>`;
+        }
+      }
+      hdr.innerHTML = `
+        <div class="ex-title-wrap">
+          <span class="ex-badge">${ex.title}</span>
+          <span class="ex-pts">(${ex.points} điểm)</span>
+          <span class="ex-prompt">${ex.prompt}</span>
+        </div>
+        ${resultTag}
+      `;
+      card.appendChild(hdr);
+
+      // Content by Type
+      if (ex.type === "fill_inline") {
+        card.appendChild(renderFillInline(exam, ex, ea, exRes, submitted));
+      } else if (ex.type === "compare") {
+        card.appendChild(renderCompare(exam, ex, ea, exRes, submitted));
+      } else if (ex.type === "mental") {
+        card.appendChild(renderMental(exam, ex, ea, exRes, submitted));
+      } else if (ex.type === "order") {
+        card.appendChild(renderOrder(exam, ex, ea, exRes, submitted));
+      } else if (ex.type === "vertical") {
+        card.appendChild(renderVertical(exam, ex, ea, exRes, submitted));
+      } else if (ex.type === "find_x") {
+        card.appendChild(renderFindX(exam, ex, ea, exRes, submitted));
+      } else if (ex.type === "word") {
+        card.appendChild(renderWord(exam, ex, ea, exRes, submitted));
+      }
+
+      // Detailed Solution Panel (ONLY rendered/visible AFTER submission!)
+      if (submitted) {
+        card.appendChild(renderSolutionPanel(ex));
+      }
+
+      return card;
+    }
+
+    function renderFillInline(exam, ex, ea, exRes, submitted) {
+      const grid = document.createElement("div");
+      grid.className = ex.items.length === 1 ? "" : "sub-grid";
+
+      ex.items.forEach((item) => {
+        const box = document.createElement("div");
+        box.className = "sub-item";
+        if (submitted) {
+          const st = exRes.items[item.id].status;
+          box.classList.add(st === "good" ? "item-good" : st === "partial" ? "item-partial" : "item-bad");
+        }
+
+        const line = document.createElement("div");
+        line.className = "sub-line";
+        let blankIdx = 0;
+
+        item.parts.forEach((part) => {
+          if (typeof part === "string") {
+            const span = document.createElement("span");
+            span.textContent = part;
+            line.appendChild(span);
+          } else {
+            const key = item.id + "_" + blankIdx;
+            const input = document.createElement("input");
+            input.type = "number";
+            input.inputMode = "numeric";
+            input.className = "math-input";
+            input.placeholder = "?";
+            input.value = ea[key] ?? "";
+            input.disabled = submitted;
+            input.addEventListener("input", (e) => {
+              ea[key] = e.target.value;
+              saveState();
+              updateProgressUI(exam, null);
+            });
+            line.appendChild(input);
+            blankIdx++;
+          }
+        });
+
+        box.appendChild(line);
+
+        if (submitted) {
+          const ir = exRes.items[item.id];
+          const fb = document.createElement("div");
+          fb.className = "item-feedback " + ir.status;
+          fb.innerHTML = ir.status === "good"
+            ? "✅ Chính xác!"
+            : `❌ Đáp án đúng: <strong>${ir.expectedVals.join(", ")}</strong>`;
+          box.appendChild(fb);
+        }
+
+        grid.appendChild(box);
+      });
+
+      return grid;
+    }
+
+    function renderCompare(exam, ex, ea, exRes, submitted) {
+      const grid = document.createElement("div");
+      grid.className = "sub-grid cols-2";
+
+      ex.items.forEach((item) => {
+        const box = document.createElement("div");
+        box.className = "sub-item";
+        if (submitted) {
+          box.classList.add(exRes.items[item.id].status === "good" ? "item-good" : "item-bad");
+        }
+
+        const row = document.createElement("div");
+        row.className = "compare-row";
+
+        const expr = document.createElement("div");
+        expr.className = "compare-expr";
+        const currentVal = ea[item.id] || "";
+        expr.innerHTML = `
+          <span>${item.left}</span>
+          <span class="compare-slot ${currentVal ? "chosen" : ""}" id="slot-${ex.id}-${item.id}">${currentVal || "?"}</span>
+          <span>${item.right}</span>
+        `;
+
+        const picker = document.createElement("div");
+        picker.className = "sign-picker";
+        [">", "<", "="].forEach((sign) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "sign-btn" + (currentVal === sign ? " selected" : "");
+          btn.textContent = sign;
+          btn.disabled = submitted;
+          btn.addEventListener("click", () => {
+            ea[item.id] = sign;
+            saveState();
+            playTone("click");
+            // Update DOM inline cleanly
+            const slotEl = document.getElementById(`slot-${ex.id}-${item.id}`);
+            if (slotEl) {
+              slotEl.textContent = sign;
+              slotEl.classList.add("chosen");
+            }
+            picker.querySelectorAll(".sign-btn").forEach(b => b.classList.toggle("selected", b.textContent === sign));
+            updateProgressUI(exam, null);
+          });
+          picker.appendChild(btn);
+        });
+
+        row.appendChild(expr);
+        row.appendChild(picker);
+        box.appendChild(row);
+
+        if (submitted) {
+          const ir = exRes.items[item.id];
+          const fb = document.createElement("div");
+          fb.className = "item-feedback " + ir.status;
+          fb.innerHTML = ir.status === "good"
+            ? "✅ Chính xác!"
+            : `❌ Đáp án đúng là dấu <strong>${ir.expected}</strong>`;
+          box.appendChild(fb);
+        }
+
+        grid.appendChild(box);
+      });
+
+      return grid;
+    }
+
+    function renderMental(exam, ex, ea, exRes, submitted) {
+      const grid = document.createElement("div");
+      grid.className = "sub-grid";
+
+      ex.items.forEach((item) => {
+        const box = document.createElement("div");
+        box.className = "sub-item";
+        if (submitted) {
+          box.classList.add(exRes.items[item.id].status === "good" ? "item-good" : "item-bad");
+        }
+
+        const line = document.createElement("div");
+        line.className = "sub-line";
+        line.innerHTML = `<span>${item.expr}</span>`;
+
+        const input = document.createElement("input");
+        input.type = "number";
+        input.inputMode = "numeric";
+        input.className = "math-input";
+        input.placeholder = "?";
+        input.value = ea[item.id] ?? "";
+        input.disabled = submitted;
+        input.addEventListener("input", (e) => {
+          ea[item.id] = e.target.value;
+          saveState();
+          updateProgressUI(exam, null);
+        });
+
+        line.appendChild(input);
+        box.appendChild(line);
+
+        if (submitted) {
+          const ir = exRes.items[item.id];
+          const fb = document.createElement("div");
+          fb.className = "item-feedback " + ir.status;
+          fb.innerHTML = ir.status === "good"
+            ? "✅ Đúng rồi!"
+            : `❌ Đáp án đúng: <strong>${ir.expected}</strong>`;
+          box.appendChild(fb);
+        }
+
+        grid.appendChild(box);
+      });
+
+      return grid;
+    }
+
+    function renderOrder(exam, ex, ea, exRes, submitted) {
+      if (!Array.isArray(ea.order)) ea.order = [];
+      const wrap = document.createElement("div");
+      wrap.className = "order-workspace";
+      if (submitted) {
+        wrap.style.borderColor = exRes.items.order.status === "good" ? "var(--good-border)" : "var(--bad-border)";
+        wrap.style.background = exRes.items.order.status === "good" ? "#f2fdf5" : "#fef4f4";
+      }
+
+      const hint = document.createElement("div");
+      hint.className = "order-hint";
+      hint.textContent = `👆 Bé hãy bấm lần lượt vào các thẻ số bên dưới để xếp theo thứ tự ${ex.dirLabel} (bấm vào ô đã xếp nếu muốn bỏ ra):`;
+      wrap.appendChild(hint);
+
+      const slotsRow = document.createElement("div");
+      slotsRow.className = "order-slots";
+
+      const poolRow = document.createElement("div");
+      poolRow.className = "order-pool";
+
+      function redrawOrder() {
+        slotsRow.innerHTML = "";
+        ex.numbers.forEach((_, idx) => {
+          if (idx > 0) {
+            const sep = document.createElement("span");
+            sep.className = "order-arrow";
+            sep.textContent = ex.dirLabel.includes("bé đến lớn") ? "<" : ">";
+            slotsRow.appendChild(sep);
+          }
+          const val = ea.order[idx];
+          const slot = document.createElement("button");
+          slot.type = "button";
+          slot.className = "order-slot" + (val !== undefined ? " filled" : "");
+          slot.textContent = val !== undefined ? val : "?";
+          slot.disabled = submitted || val === undefined;
+          slot.addEventListener("click", () => {
+            if (submitted || val === undefined) return;
+            ea.order.splice(idx, 1);
+            saveState();
+            playTone("click");
+            redrawOrder();
+            updateProgressUI(exam, null);
+          });
+          slotsRow.appendChild(slot);
+        });
+
+        poolRow.innerHTML = "";
+        ex.numbers.forEach((num) => {
+          const isUsed = ea.order.includes(num);
+          const tile = document.createElement("button");
+          tile.type = "button";
+          tile.className = "pool-tile" + (isUsed ? " used" : "");
+          tile.textContent = num;
+          tile.disabled = submitted || isUsed;
+          tile.addEventListener("click", () => {
+            if (submitted || ea.order.includes(num)) return;
+            ea.order.push(num);
+            saveState();
+            playTone("click");
+            redrawOrder();
+            updateProgressUI(exam, null);
+          });
+          poolRow.appendChild(tile);
+        });
+
+        if (!submitted && ea.order.length > 0) {
+          const resetBtn = document.createElement("button");
+          resetBtn.type = "button";
+          resetBtn.className = "mini-btn";
+          resetBtn.textContent = "🔄 Xếp lại";
+          resetBtn.addEventListener("click", () => {
+            ea.order = [];
+            saveState();
+            redrawOrder();
+            updateProgressUI(exam, null);
+          });
+          poolRow.appendChild(resetBtn);
+        }
+      }
+
+      redrawOrder();
+      wrap.appendChild(slotsRow);
+      wrap.appendChild(poolRow);
+
+      if (submitted) {
+        const ir = exRes.items.order;
+        const fb = document.createElement("div");
+        fb.className = "item-feedback " + ir.status;
+        fb.style.marginTop = "12px";
+        fb.innerHTML = ir.status === "good"
+          ? "✅ Sắp xếp chính xác!"
+          : `❌ Thứ tự đúng (${ex.dirLabel}): <strong>${ir.expected.join(", ")}</strong>`;
+        wrap.appendChild(fb);
+      }
+
+      return wrap;
+    }
+
+    function renderVertical(exam, ex, ea, exRes, submitted) {
+      const grid = document.createElement("div");
+      grid.className = "vertical-grid";
+
+      ex.items.forEach((item) => {
+        if (!ea[item.id]) ea[item.id] = { tens: "", units: "", carry: false };
+        const o = ea[item.id];
+
+        const card = document.createElement("div");
+        card.className = "oly-card";
+        if (submitted) {
+          card.classList.add(exRes.items[item.id].status === "good" ? "item-good" : "item-bad");
+        }
+
+        const label = document.createElement("div");
+        label.className = "oly-label";
+        label.textContent = item.label;
+        card.appendChild(label);
+
+        const aTens = Math.floor(item.a / 10);
+        const aUnits = item.a % 10;
+        const bTens = Math.floor(item.b / 10);
+        const bUnits = item.b % 10;
+
+        const cols = document.createElement("div");
+        cols.className = "calc-columns";
+
+        // Row 1: Column headers & optional carry reminder
+        const carryBtn = document.createElement("button");
+        carryBtn.type = "button";
+        carryBtn.className = "carry-btn" + (o.carry ? " on" : "");
+        carryBtn.textContent = o.carry ? "nhớ 1" : "+nhớ";
+        carryBtn.title = "Bấm để đánh dấu nhớ 1 (giúp bé không quên)";
+        carryBtn.style.gridColumn = "2";
+        carryBtn.style.gridRow = "1";
+        carryBtn.disabled = submitted;
+        carryBtn.addEventListener("click", () => {
+          o.carry = !o.carry;
+          saveState();
+          carryBtn.classList.toggle("on", o.carry);
+          carryBtn.textContent = o.carry ? "nhớ 1" : "+nhớ";
+        });
+
+        const hdrU = document.createElement("span");
+        hdrU.className = "col-hdr";
+        hdrU.textContent = "Đ.vị";
+        hdrU.style.gridColumn = "3";
+        hdrU.style.gridRow = "1";
+
+        cols.appendChild(carryBtn);
+        cols.appendChild(hdrU);
+
+        // Row 2: Top operand
+        const dA1 = document.createElement("span");
+        dA1.className = "calc-digit";
+        dA1.textContent = aTens > 0 ? aTens : "";
+        dA1.style.gridColumn = "2";
+        dA1.style.gridRow = "2";
+
+        const dA2 = document.createElement("span");
+        dA2.className = "calc-digit";
+        dA2.textContent = aUnits;
+        dA2.style.gridColumn = "3";
+        dA2.style.gridRow = "2";
+
+        cols.appendChild(dA1);
+        cols.appendChild(dA2);
+
+        // Row 3: Operator + Bottom operand
+        const opSpan = document.createElement("span");
+        opSpan.className = "calc-op";
+        opSpan.textContent = item.op;
+
+        const dB1 = document.createElement("span");
+        dB1.className = "calc-digit";
+        dB1.textContent = bTens > 0 ? bTens : "";
+        dB1.style.gridColumn = "2";
+        dB1.style.gridRow = "3";
+
+        const dB2 = document.createElement("span");
+        dB2.className = "calc-digit";
+        dB2.textContent = bUnits;
+        dB2.style.gridColumn = "3";
+        dB2.style.gridRow = "3";
+
+        cols.appendChild(opSpan);
+        cols.appendChild(dB1);
+        cols.appendChild(dB2);
+
+        // Row 4: Bar
+        const bar = document.createElement("div");
+        bar.className = "calc-bar";
+        bar.style.gridRow = "4";
+        cols.appendChild(bar);
+
+        // Row 5: Result inputs (Tens | Units)
+        const tensInput = document.createElement("input");
+        tensInput.type = "text";
+        tensInput.inputMode = "numeric";
+        tensInput.maxLength = 1;
+        tensInput.className = "digit-box";
+        tensInput.placeholder = "?";
+        tensInput.value = o.tens ?? "";
+        tensInput.disabled = submitted;
+        tensInput.style.gridColumn = "2";
+        tensInput.style.gridRow = "5";
+        tensInput.setAttribute("aria-label", `${item.label} chữ số hàng chục`);
+
+        const unitsInput = document.createElement("input");
+        unitsInput.type = "text";
+        unitsInput.inputMode = "numeric";
+        unitsInput.maxLength = 1;
+        unitsInput.className = "digit-box";
+        unitsInput.placeholder = "?";
+        unitsInput.value = o.units ?? "";
+        unitsInput.disabled = submitted;
+        unitsInput.style.gridColumn = "3";
+        unitsInput.style.gridRow = "5";
+        unitsInput.setAttribute("aria-label", `${item.label} chữ số hàng đơn vị`);
+
+        // Smart typing support (works whether child goes Units->Tens or Tens->Units!)
+        unitsInput.addEventListener("input", (e) => {
+          const clean = e.target.value.replace(/\D/g, "").slice(-1);
+          e.target.value = clean;
+          o.units = clean;
+          saveState();
+          updateProgressUI(exam, null);
+          if (clean && !o.tens) tensInput.focus();
+        });
+
+        tensInput.addEventListener("input", (e) => {
+          const clean = e.target.value.replace(/\D/g, "").slice(-1);
+          e.target.value = clean;
+          o.tens = clean;
+          saveState();
+          updateProgressUI(exam, null);
+          if (clean && !o.units) unitsInput.focus();
+        });
+
+        cols.appendChild(tensInput);
+        cols.appendChild(unitsInput);
+        card.appendChild(cols);
+
+        const tip = document.createElement("div");
+        tip.className = "oly-tip";
+        tip.textContent = "Tính từ phải sang trái (hàng Đ.vị trước)";
+        card.appendChild(tip);
+
+        if (submitted) {
+          const ir = exRes.items[item.id];
+          const fb = document.createElement("div");
+          fb.className = "item-feedback " + ir.status;
+          fb.innerHTML = ir.status === "good"
+            ? `✅ Đúng: ${ir.expected}`
+            : `❌ Kết quả đúng: <strong>${ir.expected}</strong>`;
+          card.appendChild(fb);
+        }
+
+        grid.appendChild(card);
+      });
+
+      return grid;
+    }
+
+    function renderFindX(exam, ex, ea, exRes, submitted) {
+      const grid = document.createElement("div");
+      grid.className = "findx-grid";
+
+      ex.items.forEach((item) => {
+        if (!ea[item.id]) ea[item.id] = { a: "", op: "", b: "", res: "" };
+        const o = ea[item.id];
+
+        const card = document.createElement("div");
+        card.className = "findx-card";
+        if (submitted) {
+          const st = exRes.items[item.id].status;
+          card.classList.add(st === "good" ? "item-good" : st === "partial" ? "item-partial" : "item-bad");
+        }
+
+        const eq = document.createElement("div");
+        eq.className = "findx-eq";
+        eq.textContent = item.eq;
+        card.appendChild(eq);
+
+        // Step 1: x = [a] [+ / -] [b]
+        const step1 = document.createElement("div");
+        step1.className = "findx-step";
+        step1.innerHTML = `<span>x =</span>`;
+
+        const inpA = document.createElement("input");
+        inpA.type = "number";
+        inpA.inputMode = "numeric";
+        inpA.className = "math-input narrow";
+        inpA.placeholder = "?";
+        inpA.value = o.a ?? "";
+        inpA.disabled = submitted;
+        inpA.addEventListener("input", (e) => { o.a = e.target.value; saveState(); updateProgressUI(exam, null); });
+
+        const opWrap = document.createElement("div");
+        opWrap.className = "op-toggle";
+        ["+", "−"].forEach((sym) => {
+          const val = sym === "−" ? "-" : "+";
+          const b = document.createElement("button");
+          b.type = "button";
+          b.textContent = sym;
+          b.className = normalizeOp(o.op) === val ? "selected" : "";
+          b.disabled = submitted;
+          b.addEventListener("click", () => {
+            o.op = val;
+            saveState();
+            playTone("click");
+            opWrap.querySelectorAll("button").forEach(btn => btn.classList.toggle("selected", btn === b));
+            updateProgressUI(exam, null);
+          });
+          opWrap.appendChild(b);
+        });
+
+        const inpB = document.createElement("input");
+        inpB.type = "number";
+        inpB.inputMode = "numeric";
+        inpB.className = "math-input narrow";
+        inpB.placeholder = "?";
+        inpB.value = o.b ?? "";
+        inpB.disabled = submitted;
+        inpB.addEventListener("input", (e) => { o.b = e.target.value; saveState(); updateProgressUI(exam, null); });
+
+        step1.appendChild(inpA);
+        step1.appendChild(opWrap);
+        step1.appendChild(inpB);
+        card.appendChild(step1);
+
+        // Step 2: x = [res]
+        const step2 = document.createElement("div");
+        step2.className = "findx-step";
+        step2.innerHTML = `<span>x =</span>`;
+
+        const inpRes = document.createElement("input");
+        inpRes.type = "number";
+        inpRes.inputMode = "numeric";
+        inpRes.className = "math-input wide";
+        inpRes.placeholder = "kết quả";
+        inpRes.value = o.res ?? "";
+        inpRes.disabled = submitted;
+        inpRes.addEventListener("input", (e) => { o.res = e.target.value; saveState(); updateProgressUI(exam, null); });
+
+        step2.appendChild(inpRes);
+        card.appendChild(step2);
+
+        if (submitted) {
+          const ir = exRes.items[item.id];
+          const fb = document.createElement("div");
+          fb.className = "item-feedback " + ir.status;
+          fb.textContent = ir.status === "good" ? `✅ Chính xác! x = ${ir.expected}` : ir.note;
+          card.appendChild(fb);
+        }
+
+        grid.appendChild(card);
+      });
+
+      return grid;
+    }
+
+    function renderWord(exam, ex, ea, exRes, submitted) {
+      const wrap = document.createElement("div");
+      wrap.className = "word-box";
+
+      // Problem Statement + Optional Illustration
+      const story = document.createElement("div");
+      story.className = "word-story";
+      story.innerHTML = `
+        <div style="flex:1; min-width:220px;">${ex.story}</div>
+        ${ex.svgType ? renderSvgDiagram(ex.svgType) : ""}
+      `;
+      wrap.appendChild(story);
+
+      // Interactive Bài Giải Sheet
+      const sheet = document.createElement("div");
+      sheet.className = "baigiai-sheet";
+      sheet.innerHTML = `<div class="baigiai-title">Bài giải</div>`;
+
+      ex.steps.forEach((step, sIdx) => {
+        const sKey = "step_" + sIdx;
+        if (!ea[sKey]) ea[sKey] = { sentenceChoice: "", customSentence: "", a: "", op: "", b: "", res: "" };
+        const sa = ea[sKey];
+
+        const block = document.createElement("div");
+        block.className = "step-block";
+        if (ex.steps.length > 1) {
+          block.innerHTML = `<div class="step-label">${step.label}</div>`;
+        }
+
+        // Sentence Picker + Custom Option
+        const sTitle = document.createElement("div");
+        sTitle.style.cssText = "font-size:0.86rem; font-weight:800; color:var(--ink-muted);";
+        sTitle.textContent = "1. Chọn câu lời giải đúng:";
+        block.appendChild(sTitle);
+
+        const chipsWrap = document.createElement("div");
+        chipsWrap.className = "sentence-chips";
+
+        const customInput = document.createElement("input");
+        customInput.type = "text";
+        customInput.className = "custom-sentence-input";
+        customInput.placeholder = "Tự viết câu lời giải của bé...";
+        customInput.value = sa.customSentence ?? "";
+        customInput.disabled = submitted;
+        customInput.style.display = sa.sentenceChoice === "__custom__" ? "block" : "none";
+        customInput.addEventListener("input", (e) => {
+          sa.customSentence = e.target.value;
+          saveState();
+          updateProgressUI(exam, null);
+        });
+
+        step.sentenceOptions.forEach((opt, optIdx) => {
+          const btn = document.createElement("button");
+          btn.type = "button";
+          btn.className = "sentence-chip" + (String(sa.sentenceChoice) === String(optIdx) ? " selected" : "");
+          btn.textContent = opt.text;
+          btn.disabled = submitted;
+          btn.addEventListener("click", () => {
+            sa.sentenceChoice = String(optIdx);
+            saveState();
+            playTone("click");
+            chipsWrap.querySelectorAll(".sentence-chip").forEach(c => c.classList.remove("selected"));
+            btn.classList.add("selected");
+            customInput.style.display = "none";
+            updateProgressUI(exam, null);
+          });
+          chipsWrap.appendChild(btn);
+        });
+
+        const customBtn = document.createElement("button");
+        customBtn.type = "button";
+        customBtn.className = "sentence-chip" + (sa.sentenceChoice === "__custom__" ? " selected" : "");
+        customBtn.textContent = "✏️ Tự viết câu lời giải khác...";
+        customBtn.disabled = submitted;
+        customBtn.addEventListener("click", () => {
+          sa.sentenceChoice = "__custom__";
+          saveState();
+          playTone("click");
+          chipsWrap.querySelectorAll(".sentence-chip").forEach(c => c.classList.remove("selected"));
+          customBtn.classList.add("selected");
+          customInput.style.display = "block";
+          customInput.focus();
+          updateProgressUI(exam, null);
+        });
+        chipsWrap.appendChild(customBtn);
+
+        block.appendChild(chipsWrap);
+        block.appendChild(customInput);
+
+        // Equation Builder
+        const cTitle = document.createElement("div");
+        cTitle.style.cssText = "font-size:0.86rem; font-weight:800; color:var(--ink-muted); margin-top:4px;";
+        cTitle.textContent = "2. Viết phép tính:";
+        block.appendChild(cTitle);
+
+        const eqRow = document.createElement("div");
+        eqRow.className = "equation-builder";
+
+        const inA = document.createElement("input");
+        inA.type = "number";
+        inA.inputMode = "numeric";
+        inA.className = "math-input narrow";
+        inA.placeholder = "?";
+        inA.value = sa.a ?? "";
+        inA.disabled = submitted;
+        inA.addEventListener("input", (e) => { sa.a = e.target.value; saveState(); updateProgressUI(exam, null); });
+
+        const opWrap = document.createElement("div");
+        opWrap.className = "op-toggle";
+        ["+", "−"].forEach((sym) => {
+          const val = sym === "−" ? "-" : "+";
+          const b = document.createElement("button");
+          b.type = "button";
+          b.textContent = sym;
+          b.className = normalizeOp(sa.op) === val ? "selected" : "";
+          b.disabled = submitted;
+          b.addEventListener("click", () => {
+            sa.op = val;
+            saveState();
+            playTone("click");
+            opWrap.querySelectorAll("button").forEach(btn => btn.classList.toggle("selected", btn === b));
+            updateProgressUI(exam, null);
+          });
+          opWrap.appendChild(b);
+        });
+
+        const inB = document.createElement("input");
+        inB.type = "number";
+        inB.inputMode = "numeric";
+        inB.className = "math-input narrow";
+        inB.placeholder = "?";
+        inB.value = sa.b ?? "";
+        inB.disabled = submitted;
+        inB.addEventListener("input", (e) => { sa.b = e.target.value; saveState(); updateProgressUI(exam, null); });
+
+        const eqSym = document.createElement("span");
+        eqSym.textContent = "=";
+
+        const inRes = document.createElement("input");
+        inRes.type = "number";
+        inRes.inputMode = "numeric";
+        inRes.className = "math-input";
+        inRes.placeholder = "?";
+        inRes.value = sa.res ?? "";
+        inRes.disabled = submitted;
+        inRes.addEventListener("input", (e) => { sa.res = e.target.value; saveState(); updateProgressUI(exam, null); });
+
+        const unitTag = document.createElement("span");
+        unitTag.style.color = "var(--ink-muted)";
+        unitTag.textContent = `(${ex.unit})`;
+
+        eqRow.appendChild(inA);
+        eqRow.appendChild(opWrap);
+        eqRow.appendChild(inB);
+        eqRow.appendChild(eqSym);
+        eqRow.appendChild(inRes);
+        eqRow.appendChild(unitTag);
+        block.appendChild(eqRow);
+
+        if (submitted) {
+          const stRes = exRes.items.word.stepStatuses[sIdx];
+          const fb = document.createElement("div");
+          const okAll = stRes.sentOk && stRes.exprOk && stRes.resOk;
+          fb.className = "item-feedback " + (okAll ? "good" : (stRes.sentOk || stRes.exprOk) ? "partial" : "bad");
+          if (okAll) {
+            fb.textContent = "✅ Câu lời giải và phép tính chính xác!";
+          } else {
+            const parts = [];
+            if (!stRes.sentOk) parts.push("câu lời giải chưa phù hợp");
+            if (!stRes.exprOk || !stRes.resOk) {
+              const es = stRes.expectedStep;
+              parts.push(`phép tính gợi ý: ${es.a} ${es.op === "-" ? "−" : "+"} ${es.b} = ${es.res}`);
+            }
+            fb.textContent = "❌ Cần xem lại: " + parts.join("; ") + ".";
+          }
+          block.appendChild(fb);
+        }
+
+        sheet.appendChild(block);
+      });
+
+      // Final Đáp số Row
+      ex.finalAnswers.forEach((fa, fIdx) => {
+        const dapRow = document.createElement("div");
+        dapRow.className = "dapso-row";
+        dapRow.innerHTML = `<span>${fa.label}</span>`;
+
+        const fIn = document.createElement("input");
+        fIn.type = "number";
+        fIn.inputMode = "numeric";
+        fIn.className = "math-input";
+        fIn.placeholder = "?";
+        fIn.value = ea["final_" + fIdx] ?? "";
+        fIn.disabled = submitted;
+        fIn.addEventListener("input", (e) => {
+          ea["final_" + fIdx] = e.target.value;
+          saveState();
+          updateProgressUI(exam, null);
+        });
+
+        const unitSpan = document.createElement("span");
+        unitSpan.textContent = fa.unit;
+
+        dapRow.appendChild(fIn);
+        dapRow.appendChild(unitSpan);
+
+        if (submitted) {
+          const fc = exRes.items.word.finalChecks[fIdx];
+          const tag = document.createElement("span");
+          tag.className = "item-feedback " + (fc.ok ? "good" : "bad");
+          tag.innerHTML = fc.ok ? "✅ Đúng Đáp số" : `❌ Đáp số đúng: <strong>${fc.expected} ${fc.unit}</strong>`;
+          dapRow.appendChild(tag);
+        }
+
+        sheet.appendChild(dapRow);
+      });
+
+      wrap.appendChild(sheet);
+      return wrap;
+    }
+
+    function renderSolutionPanel(ex) {
+      const box = document.createElement("div");
+      box.className = "solution-box show";
+
+      let content = `<div class="solution-head"><span>📖 Hướng dẫn giải chi tiết</span></div>`;
+
+      if (ex.type === "vertical") {
+        content += `<div class="sol-vertical-wrap">` + ex.items.map(item => `
+          <div class="sol-vertical-item">
+            <div style="font-weight:900; color:var(--primary); margin-bottom:4px;">${item.label} = <span class="sol-answer">${item.ans}</span></div>
+            <ul class="solution-list">${item.steps.map(s => `<li>${s}</li>`).join("")}</ul>
+          </div>
+        `).join("") + `</div>`;
+      } else if (ex.type === "order") {
+        content += `<p style="margin:0; font-weight:700;">${ex.explain} → <span class="sol-answer">${ex.ans.join(", ")}</span></p>`;
+      } else if (ex.type === "word") {
+        content += `<ul class="solution-list">${ex.explain.map(line => `<li>${line}</li>`).join("")}</ul>`;
+      } else {
+        content += `<ul class="solution-list">` + ex.items.map(item => {
+          const title = item.eq || item.expr || (item.left ? `${item.left} ${item.ans} ${item.right}` : "");
+          return `<li>${title ? `<strong>${title}</strong> ` : ""}${item.explain}</li>`;
+        }).join("") + `</ul>`;
+      }
+
+      box.innerHTML = content;
+      return box;
+    }
+
+    // =========================================================================
+    // 10. SUBMIT, RETAKE, NEXT EXAM & TIMER LOGIC
+    // =========================================================================
+    function handleSubmitAttempt(exam) {
+      const prog = countExerciseProgress(exam);
+      if (prog.emptyCount > 0) {
+        document.getElementById("confirmSubmitMsg").textContent =
+          `Bé vẫn còn ${prog.emptyCount} bài chưa điền hết chỗ trống. Bé muốn quay lại làm tiếp hay nộp bài luôn?`;
+        openModal("confirmSubmitModal");
+      } else {
+        finalizeSubmission(exam);
+      }
+    }
+
+    function finalizeSubmission(exam) {
+      closeModal("confirmSubmitModal");
+      pauseTimer();
+      const result = gradeExam(exam);
+      state.results[exam.id] = result;
+      saveState();
+
+      if (result.score >= 8) {
+        playTone("cheer");
+        launchConfetti();
+      } else {
+        playTone("click");
+      }
+
+      renderAll();
+      document.getElementById("reportCard").scrollIntoView({ behavior: "smooth", block: "center" });
+    }
+
+    function retakeExam(examId) {
+      if (isSubmitted(examId) || countExerciseProgress(EXAMS.find(e => e.id === examId)).doneExercises > 0) {
+        if (!confirm("Bé có chắc muốn xóa bài làm cũ để làm lại đề này từ đầu không?")) return;
+      }
+      delete state.answers[examId];
+      delete state.results[examId];
+      saveState();
+      resetTimer(false);
+      renderAll();
+    }
+
+    function goToNextExam(currentId) {
+      const next = Math.min(10, currentId + 1);
+      state.currentExamId = next;
+      saveState();
+      resetTimer(false);
+      playTone("click");
+      renderAll();
+      document.getElementById("paperSheet").scrollIntoView({ behavior: "smooth", block: "start" });
+    }
+
+    // Timer
+    function renderTimer() {
+      const m = Math.floor(timerSeconds / 60);
+      const s = timerSeconds % 60;
+      const disp = document.getElementById("timerDisplay");
+      disp.textContent = `${String(m).padStart(2, "0")}:${String(s).padStart(2, "0")}`;
+      disp.classList.toggle("warning", timerSeconds <= 180 && timerSeconds > 0);
+      document.getElementById("timerToggleBtn").textContent = timerRunning ? "Tạm dừng" : "Bắt đầu";
+    }
+
+    function startTimer() {
+      if (timerRunning) return;
+      timerRunning = true;
+      timerInterval = setInterval(() => {
+        if (timerSeconds > 0) {
+          timerSeconds--;
+          renderTimer();
+        } else {
+          pauseTimer();
+          alert("Hết 40 phút làm bài rồi! Bé bấm Nộp bài để xem điểm nhé!");
+        }
+      }, 1000);
+      renderTimer();
+    }
+
+    function pauseTimer() {
+      timerRunning = false;
+      if (timerInterval) clearInterval(timerInterval);
+      timerInterval = null;
+      renderTimer();
+    }
+
+    function resetTimer(autoRender = true) {
+      pauseTimer();
+      timerSeconds = 40 * 60;
+      if (autoRender) renderTimer();
+      else renderTimer();
+    }
+
+    // =========================================================================
+    // 11. SCRATCHPAD, BASE-10 BLOCKS & MODALS
+    // =========================================================================
+    function initScratchpad() {
+      const canvas = document.getElementById("scratchCanvas");
+      const ctx = canvas.getContext("2d");
+      let drawing = false;
+      let penColor = "#1e293b";
+      let erasing = false;
+
+      function getPos(e) {
+        const rect = canvas.getBoundingClientRect();
+        const scaleX = canvas.width / rect.width;
+        const scaleY = canvas.height / rect.height;
+        return {
+          x: (e.clientX - rect.left) * scaleX,
+          y: (e.clientY - rect.top) * scaleY
+        };
+      }
+
+      canvas.addEventListener("pointerdown", (e) => {
+        drawing = true;
+        canvas.setPointerCapture(e.pointerId);
+        const pos = getPos(e);
+        ctx.beginPath();
+        ctx.moveTo(pos.x, pos.y);
+      });
+
+      canvas.addEventListener("pointermove", (e) => {
+        if (!drawing) return;
+        const pos = getPos(e);
+        ctx.lineCap = "round";
+        ctx.lineJoin = "round";
+        if (erasing) {
+          ctx.globalCompositeOperation = "destination-out";
+          ctx.lineWidth = 18;
+        } else {
+          ctx.globalCompositeOperation = "source-over";
+          ctx.strokeStyle = penColor;
+          ctx.lineWidth = 3;
+        }
+        ctx.lineTo(pos.x, pos.y);
+        ctx.stroke();
+      });
+
+      canvas.addEventListener("pointerup", () => { drawing = false; });
+      canvas.addEventListener("pointercancel", () => { drawing = false; });
+
+      document.querySelectorAll(".pen-swatch").forEach((sw) => {
+        sw.addEventListener("click", () => {
+          erasing = false;
+          penColor = sw.dataset.color;
+          document.querySelectorAll(".pen-swatch").forEach(s => s.classList.remove("active"));
+          sw.classList.add("active");
+        });
+      });
+
+      document.getElementById("eraserBtn").addEventListener("click", () => {
+        erasing = true;
+        document.querySelectorAll(".pen-swatch").forEach(s => s.classList.remove("active"));
+      });
+
+      document.getElementById("clearCanvasBtn").addEventListener("click", () => {
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+      });
+    }
+
+    function renderBlocks() {
+      const input = document.getElementById("blockNumberInput");
+      let n = Math.max(0, Math.min(99, parseInt(input.value, 10) || 0));
+      input.value = n;
+      const tens = Math.floor(n / 10);
+      const ones = n % 10;
+      const stage = document.getElementById("blocksStage");
+
+      let html = `<div style="font-weight:900; color:var(--primary); margin-bottom:10px;">
+        Số ${n} = ${tens} chục và ${ones} đơn vị
+      </div>`;
+      html += `<div style="display:flex; flex-wrap:wrap; align-items:flex-end; gap:4px;">`;
+      for (let i = 0; i < tens; i++) {
+        html += `<div class="ten-rod" title="1 chục (10)">` + "<span></span>".repeat(10) + `</div>`;
+      }
+      html += `</div>`;
+      if (ones > 0) {
+        html += `<div style="margin-top:10px; display:flex; flex-wrap:wrap;">`;
+        for (let i = 0; i < ones; i++) html += `<span class="one-cube" title="1 đơn vị"></span>`;
+        html += `</div>`;
+      }
+      stage.innerHTML = html;
+    }
+
+    function openModal(id) {
+      document.getElementById(id).classList.add("open");
+    }
+
+    function closeModal(id) {
+      document.getElementById(id).classList.remove("open");
+    }
+
+    function renderScoreboard() {
+      const body = document.getElementById("scoreboardBody");
+      const completed = EXAMS.filter(e => isSubmitted(e.id));
+      const avg = completed.length
+        ? formatScore(completed.reduce((s, e) => s + getExamResult(e.id).score, 0) / completed.length)
+        : "—";
+
+      let html = `
+        <div style="display:flex; gap:10px; margin-bottom:14px; flex-wrap:wrap;">
+          <span class="stat-chip">Đã xong: ${completed.length}/10 đề</span>
+          <span class="stat-chip">Điểm trung bình: ${avg}</span>
+        </div>
+        <table class="score-table">
+          <thead>
+            <tr>
+              <th>Bộ đề</th>
+              <th>Mức độ</th>
+              <th>Trạng thái</th>
+              <th>Điểm</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody>
+      `;
+      EXAMS.forEach((ex) => {
+        const res = getExamResult(ex.id);
+        const prog = countExerciseProgress(ex);
+        const status = res ? "✅ Đã nộp" : prog.doneExercises > 0 ? `✏️ Đang làm (${prog.doneExercises}/5)` : "🔒 Chưa làm";
+        const scoreStr = res ? `<strong>${formatScore(res.score)}/10</strong>` : "—";
+        html += `
+          <tr>
+            <td><strong>${ex.code}</strong></td>
+            <td><span class="lvl-tag ${levelBadgeClass(ex.levelKey)}">${ex.level}</span></td>
+            <td>${status}</td>
+            <td>${scoreStr}</td>
+            <td><button type="button" class="mini-btn" data-jump-exam="${ex.id}">Mở đề</button></td>
+          </tr>
+        `;
+      });
+      html += `</tbody></table>`;
+      body.innerHTML = html;
+
+      body.querySelectorAll("[data-jump-exam]").forEach((btn) => {
+        btn.addEventListener("click", () => {
+          state.currentExamId = Number(btn.dataset.jumpExam);
+          saveState();
+          closeModal("scoreboardModal");
+          resetTimer(false);
+          renderAll();
+        });
+      });
+    }
+
+    // =========================================================================
+    // 12. EVENT LISTENERS & INITIALIZATION
+    // =========================================================================
+    document.getElementById("studentNameInput").addEventListener("input", (e) => {
+      state.studentName = e.target.value;
+      saveState();
+      renderTopStats();
+    });
+
+    document.getElementById("schoolInput").addEventListener("input", (e) => {
+      state.schoolName = e.target.value;
+      saveState();
+    });
+
+    document.getElementById("soundToggleBtn").addEventListener("click", () => {
+      state.soundOn = !state.soundOn;
+      saveState();
+      renderTopStats();
+      if (state.soundOn) playTone("click");
+    });
+
+    document.getElementById("printExamBtn").addEventListener("click", () => window.print());
+
+    document.getElementById("timerToggleBtn").addEventListener("click", () => {
+      if (timerRunning) pauseTimer();
+      else startTimer();
+    });
+
+    document.getElementById("timerResetBtn").addEventListener("click", () => resetTimer(true));
+
+    document.getElementById("forceSubmitBtn").addEventListener("click", () => {
+      const exam = EXAMS.find(e => e.id === state.currentExamId);
+      if (exam) finalizeSubmission(exam);
+    });
+
+    // Drawer controls
+    function toggleDrawer(open) {
+      document.getElementById("scratchDrawer").classList.toggle("open", open);
+      document.getElementById("drawerBackdrop").classList.toggle("open", open);
+    }
+    document.getElementById("openScratchBtn").addEventListener("click", () => toggleDrawer(true));
+    document.getElementById("closeDrawerBtn").addEventListener("click", () => toggleDrawer(false));
+    document.getElementById("drawerBackdrop").addEventListener("click", () => toggleDrawer(false));
+
+    document.querySelectorAll(".drawer-tab").forEach((tab) => {
+      tab.addEventListener("click", () => {
+        const key = tab.dataset.tab;
+        document.querySelectorAll(".drawer-tab").forEach(t => t.classList.toggle("active", t === tab));
+        ["draw", "blocks", "tips"].forEach(k => {
+          document.getElementById("tab-" + k).style.display = k === key ? "block" : "none";
+        });
+      });
+    });
+
+    document.getElementById("blockNumberInput").addEventListener("input", renderBlocks);
+    document.getElementById("addTenBtn").addEventListener("click", () => {
+      const inp = document.getElementById("blockNumberInput");
+      inp.value = Math.min(99, (parseInt(inp.value, 10) || 0) + 10);
+      renderBlocks();
+    });
+    document.getElementById("addOneBtn").addEventListener("click", () => {
+      const inp = document.getElementById("blockNumberInput");
+      inp.value = Math.min(99, (parseInt(inp.value, 10) || 0) + 1);
+      renderBlocks();
+    });
+    document.getElementById("resetBlockBtn").addEventListener("click", () => {
+      document.getElementById("blockNumberInput").value = 0;
+      renderBlocks();
+    });
+
+    // Modals close buttons
+    document.querySelectorAll("[data-close]").forEach((btn) => {
+      btn.addEventListener("click", () => closeModal(btn.dataset.close));
+    });
+    document.querySelectorAll(".modal-overlay").forEach((ov) => {
+      ov.addEventListener("click", (e) => {
+        if (e.target === ov) ov.classList.remove("open");
+      });
+    });
+
+    document.getElementById("openScoreboardBtn").addEventListener("click", () => {
+      renderScoreboard();
+      openModal("scoreboardModal");
+    });
+
+    // Parent corner (discreet gate)
+    document.getElementById("parentCornerBtn").addEventListener("click", () => {
+      const a = 6 + Math.floor(Math.random() * 4);
+      const b = 7 + Math.floor(Math.random() * 3);
+      parentChallengeAns = a * b;
+      document.getElementById("parentChallengeText").textContent = `${a} × ${b} =`;
+      document.getElementById("parentChallengeInput").value = "";
+      document.getElementById("parentGateError").textContent = "";
+      document.getElementById("parentGateView").style.display = "block";
+      document.getElementById("parentControlsView").style.display = "none";
+      openModal("parentModal");
+    });
+
+    document.getElementById("verifyParentBtn").addEventListener("click", () => {
+      const val = parseNum(document.getElementById("parentChallengeInput").value);
+      if (val === parentChallengeAns) {
+        document.getElementById("parentGateView").style.display = "none";
+        document.getElementById("parentControlsView").style.display = "flex";
+      } else {
+        document.getElementById("parentGateError").textContent = "Chưa đúng rồi, bố mẹ thử lại nhé!";
+      }
+    });
+
+    document.getElementById("parentPeekBtn").addEventListener("click", () => {
+      const exam = EXAMS.find(e => e.id === state.currentExamId);
+      closeModal("parentModal");
+      if (exam) finalizeSubmission(exam);
+    });
+
+    document.getElementById("parentResetAllBtn").addEventListener("click", () => {
+      if (confirm("Xóa sạch bài làm và điểm của tất cả 10 bộ đề?")) {
+        state.answers = {};
+        state.results = {};
+        saveState();
+        closeModal("parentModal");
+        resetTimer(false);
+        renderAll();
+      }
+    });
+
+    // Start
+    initScratchpad();
+    renderBlocks();
+    renderTimer();
+    renderAll();
+  })();
+  </script>
+</body>
+</html>
